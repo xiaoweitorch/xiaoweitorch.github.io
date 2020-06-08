@@ -20,12 +20,12 @@
     var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="Knapsack for All Subsets  编号：0026 试题来源：AtCoder  [TOC] 试题描述给定有$N$个正整数的一个序列$A_1,\cdots,A_N$，以及一个正整数$S$。 对于任意一个${1,2,\cdots,N}$的非空子集$T$，定义$f(T)$如下：  $f(T)$是互不相同的$T$的非空子集$x_1,x_2,\cdots,x_k$满足$A_{x_1}+\cd">
+  <meta name="description" content="Knapsack for All Subsets  编号：0026 试题来源：AtCoder  [TOC] 试题描述 给定有\(N\)个正整数的一个序列\(A_1,\cdots,A_N\)，以及一个正整数\(S\)。 对于任意一个\(\{1,2,\cdots,N\}\)的非空子集\(T\)，定义\(f(T)\)如下：  \(f(T)\)是互不相同的\(T\)的非空子集\(x_1">
 <meta property="og:type" content="article">
 <meta property="og:title" content="0026KnapsackForAllSubSets">
 <meta property="og:url" content="http://yoursite.com/2020/06/06/%E6%AF%8F%E5%A4%A9%E4%B8%80%E9%81%93%E7%AE%97%E6%B3%95%E9%A2%98/0026KnapsackForAllSubsets/index.html">
 <meta property="og:site_name" content="Something">
-<meta property="og:description" content="Knapsack for All Subsets  编号：0026 试题来源：AtCoder  [TOC] 试题描述给定有$N$个正整数的一个序列$A_1,\cdots,A_N$，以及一个正整数$S$。 对于任意一个${1,2,\cdots,N}$的非空子集$T$，定义$f(T)$如下：  $f(T)$是互不相同的$T$的非空子集$x_1,x_2,\cdots,x_k$满足$A_{x_1}+\cd">
+<meta property="og:description" content="Knapsack for All Subsets  编号：0026 试题来源：AtCoder  [TOC] 试题描述 给定有\(N\)个正整数的一个序列\(A_1,\cdots,A_N\)，以及一个正整数\(S\)。 对于任意一个\(\{1,2,\cdots,N\}\)的非空子集\(T\)，定义\(f(T)\)如下：  \(f(T)\)是互不相同的\(T\)的非空子集\(x_1">
 <meta property="article:published_time" content="2020-06-06T04:00:00.000Z">
 <meta property="article:modified_time" content="2020-06-08T15:31:49.778Z">
 <meta property="article:author" content="Leading Werido">
@@ -236,33 +236,36 @@
 <p>试题来源：<a href="https://atcoder.jp/contests/abc169/tasks/abc169_f" target="_blank" rel="noopener">AtCoder</a></p>
 </blockquote>
 <p>[TOC]</p>
-<h1 id="试题描述"><a href="#试题描述" class="headerlink" title="试题描述"></a>试题描述</h1><p>给定有$N$个正整数的一个序列$A_1,\cdots,A_N$，以及一个正整数$S$。</p>
-<p>对于任意一个${1,2,\cdots,N}$的非空子集$T$，定义$f(T)$如下：</p>
+<h1 id="试题描述">试题描述</h1>
+<p>给定有<span class="math inline">\(N\)</span>个正整数的一个序列<span class="math inline">\(A_1,\cdots,A_N\)</span>，以及一个正整数<span class="math inline">\(S\)</span>。</p>
+<p>对于任意一个<span class="math inline">\(\{1,2,\cdots,N\}\)</span>的非空子集<span class="math inline">\(T\)</span>，定义<span class="math inline">\(f(T)\)</span>如下：</p>
 <ul>
-<li>$f(T)$是互不相同的$T$的非空子集$x_1,x_2,\cdots,x_k$满足$A_{x_1}+\cdots+A_{x_k} = S$</li>
+<li><span class="math inline">\(f(T)\)</span>是互不相同的<span class="math inline">\(T\)</span>的非空子集<span class="math inline">\(x_1,x_2,\cdots,x_k\)</span>满足<span class="math inline">\(A_{x_1}+\cdots+A_{x_k} = S\)</span></li>
 </ul>
-<p>请找出${1,2,\cdots,N}$的所有非空子集$T$的$f(T)$的和，该值模998244353为结果。</p>
+<p>请找出<span class="math inline">\(\{1,2,\cdots,N\}\)</span>的所有非空子集<span class="math inline">\(T\)</span>的<span class="math inline">\(f(T)\)</span>的和，该值模998244353为结果。</p>
 <blockquote>
 <p>限制条件：</p>
 <ul>
 <li>所有的输入是整数</li>
-<li>$1\leq N\leq 3000$</li>
-<li>$1\leq S\leq 3000$</li>
-<li>$1\leq A_i\leq 3000$</li>
+<li><span class="math inline">\(1\leq N\leq 3000\)</span></li>
+<li><span class="math inline">\(1\leq S\leq 3000\)</span></li>
+<li><span class="math inline">\(1\leq A_i\leq 3000\)</span></li>
 </ul>
 </blockquote>
-<h1 id="输入"><a href="#输入" class="headerlink" title="输入"></a>输入</h1><blockquote>
-<p>N  S</p>
-<p>$A_1$    $\cdots$     $A_N$</p>
+<h1 id="输入">输入</h1>
+<blockquote>
+<p>N S</p>
+<p><span class="math inline">\(A_1\)</span> <span class="math inline">\(\cdots\)</span> <span class="math inline">\(A_N\)</span></p>
 </blockquote>
-<h1 id="解答算法"><a href="#解答算法" class="headerlink" title="解答算法"></a>解答算法</h1><p>首先，假定对于满足$A_{x_1}+A_{x_2}+\cdots + A_{x_k}=S$的这样的子序列，那么显然，包含这个子序列的序列数目就为$2^{N-k}$，因此对于每个序列，其每多包含一个数字，包含这个序列的序列的可能性就会是原来的$\frac{1}{2}$。</p>
-<p>因此我们可以设置一个$dp[s]$，$dp[s]$代表当前满足$A_{x_1}+A_{x_2}+\cdots + A_{x_k}=S$的个数。</p>
-<p>初始的时候有$dp[0]=2^N$，这是显然的。</p>
-<p>然后我们观察递推方程，假设当前读入了数字$x$，那么显然对于任意的$j\geq x$，都有$dp[j] = dp[j] + dp[j-x]/2$，为什么后面的$dp[j-x]$要除以二呢，原因就是你多加了一个数字$x$进入序列，那么其可能数目变为原来的$\frac{1}{2}$。</p>
-<p>这个题目因为用到了求模，所以说在求模中的除法和正常不一样，要用到<strong>费马小定理</strong>，也就是把$(a/2)mod\quad p$转化成$a*2^{mod-2}$</p>
-<p>但是这个题目里面，看厉害的大佬解答，都是<strong>用$(a/2)mod \quad p$转换成了$a*(mod-mod/2)$</strong>,这个数学原理是什么不太了解，但是正确性可以简单的想一下，两个$a*(mod-mod/2)$相加，一定为$1$，因此一个是原来的$\frac{1}{2}$，如果有谁知道原理，希望指点我一下。</p>
-<h2 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> mod=<span class="number">998244353</span>;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N=<span class="number">3005</span>;</span><br><span class="line"><span class="keyword">int</span> n,s;</span><br><span class="line">ll dp[N];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    ll inv2=mod-mod/<span class="number">2</span>;   <span class="comment">//定义的那个除以2的数</span></span><br><span class="line">    dp[<span class="number">0</span>]=<span class="number">1</span>;           <span class="comment">//初始dp[0]=1,和我说的等于2的N次方一个东西，因为他在最后，对结果乘以2的N次方。</span></span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%d%d"</span>,&amp;n,&amp;s);</span><br><span class="line">    ll ans=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">int</span> x;<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;x);</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j=s;j&gt;=x;j--)  <span class="comment">//递推公式</span></span><br><span class="line">            dp[j]=(dp[j]+dp[j-x]*inv2)%mod;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++) dp[s]=dp[s]*<span class="number">2</span>%mod;<span class="comment">//对结果乘以2的N次方，和先对dp[0]进行这个操作是等价的</span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%lld\n"</span>,dp[s]);  <span class="comment">//输出结果</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
+<h1 id="解答算法">解答算法</h1>
+<p>首先，假定对于满足<span class="math inline">\(A_{x_1}+A_{x_2}+\cdots + A_{x_k}=S\)</span>的这样的子序列，那么显然，包含这个子序列的序列数目就为<span class="math inline">\(2^{N-k}\)</span>，因此对于每个序列，其每多包含一个数字，包含这个序列的序列的可能性就会是原来的<span class="math inline">\(\frac{1}{2}\)</span>。</p>
+<p>因此我们可以设置一个<span class="math inline">\(dp[s]\)</span>，<span class="math inline">\(dp[s]\)</span>代表当前满足<span class="math inline">\(A_{x_1}+A_{x_2}+\cdots + A_{x_k}=S\)</span>的个数。</p>
+<p>初始的时候有<span class="math inline">\(dp[0]=2^N\)</span>，这是显然的。</p>
+<p>然后我们观察递推方程，假设当前读入了数字<span class="math inline">\(x\)</span>，那么显然对于任意的<span class="math inline">\(j\geq x\)</span>，都有<span class="math inline">\(dp[j] = dp[j] + dp[j-x]/2\)</span>，为什么后面的<span class="math inline">\(dp[j-x]\)</span>要除以二呢，原因就是你多加了一个数字<span class="math inline">\(x\)</span>进入序列，那么其可能数目变为原来的<span class="math inline">\(\frac{1}{2}\)</span>。</p>
+<p>这个题目因为用到了求模，所以说在求模中的除法和正常不一样，要用到<strong>费马小定理</strong>，也就是把<span class="math inline">\((a/2)mod\quad p\)</span>转化成<span class="math inline">\(a*2^{mod-2}\)</span></p>
+<p>但是这个题目里面，看厉害的大佬解答，都是<strong>用<span class="math inline">\((a/2)mod \quad p\)</span>转换成了<span class="math inline">\(a*(mod-mod/2)\)</span></strong>,这个数学原理是什么不太了解，但是正确性可以简单的想一下，两个<span class="math inline">\(a*(mod-mod/2)\)</span>相加，一定为<span class="math inline">\(1\)</span>，因此一个是原来的<span class="math inline">\(\frac{1}{2}\)</span>，如果有谁知道原理，希望指点我一下。</p>
+<h2 id="代码实现">代码实现</h2>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> mod=<span class="number">998244353</span>;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N=<span class="number">3005</span>;</span><br><span class="line"><span class="keyword">int</span> n,s;</span><br><span class="line">ll dp[N];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    ll inv2=mod-mod/<span class="number">2</span>;   <span class="comment">//定义的那个除以2的数</span></span><br><span class="line">    dp[<span class="number">0</span>]=<span class="number">1</span>;           <span class="comment">//初始dp[0]=1,和我说的等于2的N次方一个东西，因为他在最后，对结果乘以2的N次方。</span></span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%d%d"</span>,&amp;n,&amp;s);</span><br><span class="line">    ll ans=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">int</span> x;<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;x);</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j=s;j&gt;=x;j--)  <span class="comment">//递推公式</span></span><br><span class="line">            dp[j]=(dp[j]+dp[j-x]*inv2)%mod;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++) dp[s]=dp[s]*<span class="number">2</span>%mod;<span class="comment">//对结果乘以2的N次方，和先对dp[0]进行这个操作是等价的</span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%lld\n"</span>,dp[s]);  <span class="comment">//输出结果</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
     </div>
 
