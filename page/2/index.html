@@ -161,6 +161,272 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/25/%E6%AF%8F%E5%A4%A9%E4%B8%80%E9%81%93%E7%AE%97%E6%B3%95%E9%A2%98/0019%E4%B8%A4%E4%B8%AA%E5%AD%90%E5%BA%8F%E5%88%97%E7%9A%84%E6%9C%80%E5%A4%A7%E7%82%B9%E7%A7%AF/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Leading Werido">
+      <meta itemprop="description" content="笔记记录">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Something">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/05/25/%E6%AF%8F%E5%A4%A9%E4%B8%80%E9%81%93%E7%AE%97%E6%B3%95%E9%A2%98/0019%E4%B8%A4%E4%B8%AA%E5%AD%90%E5%BA%8F%E5%88%97%E7%9A%84%E6%9C%80%E5%A4%A7%E7%82%B9%E7%A7%AF/" class="post-title-link" itemprop="url">0019两个子序列的最大点积</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-05-25 18:56:00" itemprop="dateCreated datePublished" datetime="2020-05-25T18:56:00+08:00">2020-05-25</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-06-09 00:17:10" itemprop="dateModified" datetime="2020-06-09T00:17:10+08:00">2020-06-09</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%AF%8F%E5%A4%A9%E4%B8%80%E9%81%93%E7%AE%97%E6%B3%95%E9%A2%98/" itemprop="url" rel="index"><span itemprop="name">每天一道算法题</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/2020/05/25/%E6%AF%8F%E5%A4%A9%E4%B8%80%E9%81%93%E7%AE%97%E6%B3%95%E9%A2%98/0019%E4%B8%A4%E4%B8%AA%E5%AD%90%E5%BA%8F%E5%88%97%E7%9A%84%E6%9C%80%E5%A4%A7%E7%82%B9%E7%A7%AF/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/05/25/每天一道算法题/0019两个子序列的最大点积/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>1.3k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <font size=8>两个子序列的最大点积</font>
+
+<blockquote>
+<p>编号：0019</p>
+<p>试题来源：<a href="https://leetcode-cn.com/problems/max-dot-product-of-two-subsequences/" target="_blank" rel="noopener">leetcode周赛190</a></p>
+</blockquote>
+<p>[TOC]</p>
+<h1 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h1><p>给定两个数组<code>nums1</code>和<code>nums2</code></p>
+<p>请返回<code>nums1</code>和<code>nums2</code>中两个长度相同的非空子序列的最大点积。</p>
+<p>数组的非空子序列是通过<strong>删除原数组中某些元素(可能一个也不删除)</strong>后剩余数字组成的序列，但不能改变数字间相对顺序。</p>
+<blockquote>
+<ul>
+<li>$1\leq nums1.length,nums2.length\leq 500$</li>
+<li>$-1000\leq nums1[i],nums2[j]\leq 100$</li>
+</ul>
+</blockquote>
+<h1 id="解答算法"><a href="#解答算法" class="headerlink" title="解答算法"></a>解答算法</h1><h2 id="算法思路"><a href="#算法思路" class="headerlink" title="算法思路"></a>算法思路</h2><p>因为要对子序列进行求解，用动态规划的思路会比较方便。首先确定<code>dp[i][j]</code>对应的含义，即<code>nums1[i]</code>和<code>nums2[j]</code>前的最大点积子序列(可能包含<code>nums1[i]</code>和<code>nums2[j]</code>)。</p>
+<p>那么递推公式如下：</p>
+<ul>
+<li>如果最大点积子序列只有<code>nums1[i] * nums2[j]</code></li>
+<li>如果最大点积序列既包含<code>nums1[i]</code>和<code>nums2[j]</code>，也包含前面的最大点积子序列，也即为<code>nums1[i]*nums2[j] + dp[i-1][j-1]</code></li>
+<li>如果最大点积序列只包含<code>nums2[j]</code>，那么就为<code>dp[i-1][j-1]</code></li>
+<li>如果最大点积序列只包含<code>nums1[i]</code>，那么就为<code>dp[i][j-1]</code></li>
+<li>如果两者都不包含，那么就为<code>dp[i-1][j-1]</code></li>
+</ul>
+<h2 id="实现代码"><a href="#实现代码" class="headerlink" title="实现代码"></a>实现代码</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">maxDotProduct</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums1, <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums2)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> sz1=nums1.size(),sz2=nums2.size();</span><br><span class="line">        <span class="function"><span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt; <span class="title">dp</span><span class="params">(sz1+<span class="number">1</span>,<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;(sz2+<span class="number">1</span>,<span class="number">-1e8</span>))</span></span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=sz1;i++)&#123;  <span class="comment">//注意这里的下标是从1开始是有效下标，有效避免了对边界进行特殊处理</span></span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">1</span>;j&lt;=sz2;j++)&#123;</span><br><span class="line">                <span class="comment">//就是两者相乘</span></span><br><span class="line">                dp[i][j]=nums1[i<span class="number">-1</span>]*nums2[j<span class="number">-1</span>];</span><br><span class="line">                <span class="comment">//两者相乘以及是否加上前面的最大子序列</span></span><br><span class="line">                dp[i][j]=max(dp[i][j],dp[i][j]+dp[i<span class="number">-1</span>][j<span class="number">-1</span>]);</span><br><span class="line">                <span class="comment">//只包含i</span></span><br><span class="line">                dp[i][j]=max(dp[i][j],dp[i][j<span class="number">-1</span>]);</span><br><span class="line">                <span class="comment">//只包含j</span></span><br><span class="line">                dp[i][j]=max(dp[i][j],dp[i<span class="number">-1</span>][j]);</span><br><span class="line">                <span class="comment">//i，j都不包含</span></span><br><span class="line">                dp[i][j]=max(dp[i][j],dp[i<span class="number">-1</span>][j<span class="number">-1</span>]);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> dp[sz1][sz2];<span class="comment">//返回所需</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h2 id="复杂度分析"><a href="#复杂度分析" class="headerlink" title="复杂度分析"></a>复杂度分析</h2><blockquote>
+<ul>
+<li>时间复杂度：$O(m+n)$，对两个数组都遍历了一遍，因此总的时间复杂度为两者长度之和</li>
+<li>空间复杂度：$O(m<em>n)$，申请了一个二维数组<code>dp</code>存放所需数据，因此空间复杂度为$O(m</em>n)$</li>
+</ul>
+</blockquote>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/24/%E6%AF%8F%E5%A4%A9%E4%B8%80%E9%81%93%E7%AE%97%E6%B3%95%E9%A2%98/0018%E5%AF%BB%E6%89%BE%E4%B8%A4%E4%B8%AA%E6%AD%A3%E5%BA%8F%E6%95%B0%E7%BB%84%E7%9A%84%E4%B8%AD%E4%BD%8D%E6%95%B0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Leading Werido">
+      <meta itemprop="description" content="笔记记录">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Something">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/05/24/%E6%AF%8F%E5%A4%A9%E4%B8%80%E9%81%93%E7%AE%97%E6%B3%95%E9%A2%98/0018%E5%AF%BB%E6%89%BE%E4%B8%A4%E4%B8%AA%E6%AD%A3%E5%BA%8F%E6%95%B0%E7%BB%84%E7%9A%84%E4%B8%AD%E4%BD%8D%E6%95%B0/" class="post-title-link" itemprop="url">0018 寻找两个正序数组的中位数</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-05-24 23:35:00" itemprop="dateCreated datePublished" datetime="2020-05-24T23:35:00+08:00">2020-05-24</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-06-09 00:17:10" itemprop="dateModified" datetime="2020-06-09T00:17:10+08:00">2020-06-09</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%AF%8F%E5%A4%A9%E4%B8%80%E9%81%93%E7%AE%97%E6%B3%95%E9%A2%98/" itemprop="url" rel="index"><span itemprop="name">每天一道算法题</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/2020/05/24/%E6%AF%8F%E5%A4%A9%E4%B8%80%E9%81%93%E7%AE%97%E6%B3%95%E9%A2%98/0018%E5%AF%BB%E6%89%BE%E4%B8%A4%E4%B8%AA%E6%AD%A3%E5%BA%8F%E6%95%B0%E7%BB%84%E7%9A%84%E4%B8%AD%E4%BD%8D%E6%95%B0/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/05/24/每天一道算法题/0018寻找两个正序数组的中位数/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>3.6k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>3 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <font size=8>寻找两个正序数组的中位数</font>
+
+<blockquote>
+<p>编号：0018</p>
+<p>试题来源：<a href="https://leetcode-cn.com/problems/median-of-two-sorted-arrays/" target="_blank" rel="noopener">leetcode</a></p>
+</blockquote>
+<p>[TOC]</p>
+<h1 id="试题描述"><a href="#试题描述" class="headerlink" title="试题描述"></a>试题描述</h1><p>给定两个大小为$m$和$n$的<strong>正序</strong>(从小大大)数组<code>nums1</code>和<code>nums2</code>。请找出这两个正序数组的中位数，并要求算法的算法的时间复杂度为$O(log(m+n))$</p>
+<blockquote>
+<p>假设<code>num1</code>和<code>nums2</code>不会同时为空</p>
+</blockquote>
+<h1 id="解答算法"><a href="#解答算法" class="headerlink" title="解答算法"></a>解答算法</h1><h2 id="暴力解法"><a href="#暴力解法" class="headerlink" title="暴力解法"></a>暴力解法</h2><h3 id="算法思路"><a href="#算法思路" class="headerlink" title="算法思路"></a>算法思路</h3><p>没做出来这道题，用的是两个有序数组的归并排序，合并的时间复杂度为$O(m+n-1)$。</p>
+<p>暴力解法的思路就是将两个数组合并到一个数组中，因为我只关心中位数，所以当合并到$\frac{m+n}{2}$以及$\frac{m+n}{2} + 1$这两个数就结束，同时我也不关心合并后的数组到底是怎样，因此我只需要设置两个变量<code>mid[2]</code>来存储中间的两个数就好了。</p>
+<p>如果<code>m+n</code>是奇数，那么中位数就为$\frac{m+n}{2} + 1$，如果是偶数，那么就是那两个数的平均数。</p>
+<h3 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">double</span> <span class="title">findMedianSortedArrays</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums1, <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums2)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> sumSize = nums1.size() + nums2.size(), nums1Cur = <span class="number">0</span>, nums2Cur = <span class="number">0</span>, nums = <span class="number">0</span>;  <span class="comment">//sumSize存储m+n,nums1Cur、nums2Cur存储当前遍历两个数组的位置，nums用来存储已经放到合并后数组的数目</span></span><br><span class="line">        <span class="keyword">int</span> mid[<span class="number">2</span>] = &#123;&#125;;  <span class="comment">//mid用来存放中间的两个树</span></span><br><span class="line">        <span class="keyword">while</span> (nums1Cur &lt; nums1.size() || nums2Cur &lt; nums2.size())   <span class="comment">//只要这两个数组没有都遍历到最后一个</span></span><br><span class="line">        &#123;</span><br><span class="line">            nums++;  <span class="comment">//每一次遍历存放的数都自增</span></span><br><span class="line">            <span class="keyword">if</span> (nums1Cur == nums1.size() || (nums2Cur != nums2.size() &amp;&amp; nums1[nums1Cur] &gt; nums2[nums2Cur])) <span class="comment">//nums1遍历完，或者nums2当前数值更小</span></span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">if</span> (nums == sumSize / <span class="number">2</span>)    <span class="comment">//如果当前是中间两个，那么存储进mid中</span></span><br><span class="line">                    mid[<span class="number">0</span>] = nums2[nums2Cur];</span><br><span class="line">                <span class="keyword">if</span> (nums == sumSize / <span class="number">2</span> + <span class="number">1</span>)</span><br><span class="line">                    mid[<span class="number">1</span>] = nums2[nums2Cur];</span><br><span class="line">                nums2Cur++;</span><br><span class="line"></span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">if</span> (nums == sumSize / <span class="number">2</span>)</span><br><span class="line">                    mid[<span class="number">0</span>] = nums1[nums1Cur];</span><br><span class="line">                <span class="keyword">if</span> (nums == sumSize / <span class="number">2</span> + <span class="number">1</span>)</span><br><span class="line">                    mid[<span class="number">1</span>] = nums1[nums1Cur];</span><br><span class="line">                nums1Cur++;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (sumSize &amp; <span class="number">1</span>)     <span class="comment">//奇数返回中间的</span></span><br><span class="line">            <span class="keyword">return</span> mid[<span class="number">1</span>];</span><br><span class="line">        <span class="keyword">else</span>   <span class="comment">//偶数返回中间两个的平均数</span></span><br><span class="line">            <span class="keyword">return</span> ((<span class="keyword">double</span>)mid[<span class="number">1</span>] + mid[<span class="number">0</span>]) / <span class="number">2</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h3 id="复杂度分析"><a href="#复杂度分析" class="headerlink" title="复杂度分析"></a>复杂度分析</h3><blockquote>
+<ul>
+<li>时间复杂度：整个过程中对两个数组都进行了遍历，因此总的时间复杂度为$O(m+n)$。当然可以进行一定的优化，如在找到中间的两个数后，退出遍历。</li>
+<li>空间复杂度：整个过程只申请了常数的空间，因此空间复杂度为$O(1)$</li>
+</ul>
+</blockquote>
+<h2 id="二分查找算法"><a href="#二分查找算法" class="headerlink" title="二分查找算法"></a>二分查找算法</h2><h3 id="算法思路-1"><a href="#算法思路-1" class="headerlink" title="算法思路"></a>算法思路</h3><p>我们要寻找中位数，也就是寻找合并之后的数组中的第$\frac{m+n}{2}$小和第$\frac{m+n}{2}+1$小的，如果是奇数，只用后者，如果是偶数，那么要用到两者的平均数。因此这个问题可以变成求解数组中第$k$小的数字。</p>
+<p>如果我们想要求第$k$个，那么可以找到$A[\frac{k}{2} -1]$和$B[\frac{k}{2} -1]$，这两者前面分别由$\frac{k}{2}-1$个数，因此总共有$2*(\frac{k}{2} - 1) &lt;= k -2$，因此如果$A[\frac{k}{2} -1] &lt; B[\frac{k}{2}-1]$，那么前者最多是第$k-1$小的数，因此$A[0\dotso \frac{k}{2}-1]$全部不可能是第$k$小的数。</p>
+<p>然后我们就得到了新的要比较的两个数组，我们已经排除了$\frac{k}{2}$个数，因此新的比较数目就是$k - \frac{k}{2}$</p>
+<p>然后就相当于对新的数组继续这样的步骤</p>
+<h3 id="代码实现-1"><a href="#代码实现-1" class="headerlink" title="代码实现"></a>代码实现</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">getKthElement</span><span class="params">(<span class="keyword">const</span> <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums1, <span class="keyword">const</span> <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums2, <span class="keyword">int</span> k)</span> </span>&#123;   <span class="comment">//得到第k小的数字</span></span><br><span class="line">        <span class="comment">/* 主要思路：要找到第 k (k&gt;1) 小的元素，那么就取 pivot1 = nums1[k/2-1] 和 pivot2 = nums2[k/2-1] 进行比较</span></span><br><span class="line"><span class="comment">         * 这里的 "/" 表示整除</span></span><br><span class="line"><span class="comment">         * nums1 中小于等于 pivot1 的元素有 nums1[0 .. k/2-2] 共计 k/2-1 个</span></span><br><span class="line"><span class="comment">         * nums2 中小于等于 pivot2 的元素有 nums2[0 .. k/2-2] 共计 k/2-1 个</span></span><br><span class="line"><span class="comment">         * 取 pivot = min(pivot1, pivot2)，两个数组中小于等于 pivot 的元素共计不会超过 (k/2-1) + (k/2-1) &lt;= k-2 个</span></span><br><span class="line"><span class="comment">         * 这样 pivot 本身最大也只能是第 k-1 小的元素</span></span><br><span class="line"><span class="comment">         * 如果 pivot = pivot1，那么 nums1[0 .. k/2-1] 都不可能是第 k 小的元素。把这些元素全部 "删除"，剩下的作为新的 nums1 数组</span></span><br><span class="line"><span class="comment">         * 如果 pivot = pivot2，那么 nums2[0 .. k/2-1] 都不可能是第 k 小的元素。把这些元素全部 "删除"，剩下的作为新的 nums2 数组</span></span><br><span class="line"><span class="comment">         * 由于我们 "删除" 了一些元素（这些元素都比第 k 小的元素要小），因此需要修改 k 的值，减去删除的数的个数</span></span><br><span class="line"><span class="comment">         */</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">int</span> m = nums1.size();   <span class="comment">//得到量数组长度</span></span><br><span class="line">        <span class="keyword">int</span> n = nums2.size();</span><br><span class="line">        <span class="keyword">int</span> index1 = <span class="number">0</span>, index2 = <span class="number">0</span>;  <span class="comment">//偏移坐标</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">while</span> (<span class="literal">true</span>) &#123;</span><br><span class="line">            <span class="comment">// 边界情况</span></span><br><span class="line">            <span class="keyword">if</span> (index1 == m) &#123;   <span class="comment">//如果一个到达边界，那么直接取另一个中的数字就好</span></span><br><span class="line">                <span class="keyword">return</span> nums2[index2 + k - <span class="number">1</span>];</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (index2 == n) &#123;</span><br><span class="line">                <span class="keyword">return</span> nums1[index1 + k - <span class="number">1</span>];</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (k == <span class="number">1</span>) &#123;   <span class="comment">//如果最小。那么只用前两个比较一下就行</span></span><br><span class="line">                <span class="keyword">return</span> min(nums1[index1], nums2[index2]);</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            <span class="comment">// 正常情况</span></span><br><span class="line">            <span class="keyword">int</span> newIndex1 = min(index1 + k / <span class="number">2</span> - <span class="number">1</span>, m - <span class="number">1</span>);  <span class="comment">//新的坐标应该为原来的偏转坐标加上排除的数字，同时要注意不能越界</span></span><br><span class="line">            <span class="keyword">int</span> newIndex2 = min(index2 + k / <span class="number">2</span> - <span class="number">1</span>, n - <span class="number">1</span>);</span><br><span class="line">            <span class="keyword">int</span> pivot1 = nums1[newIndex1];  <span class="comment">//比较两个中间数的大小</span></span><br><span class="line">            <span class="keyword">int</span> pivot2 = nums2[newIndex2];</span><br><span class="line">            <span class="keyword">if</span> (pivot1 &lt;= pivot2) &#123;   <span class="comment">//更新k，也就是排除掉了一部分</span></span><br><span class="line">                k -= newIndex1 - index1 + <span class="number">1</span>;</span><br><span class="line">                index1 = newIndex1 + <span class="number">1</span>;   <span class="comment">//更新偏转</span></span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span> &#123;   <span class="comment">//同上，情况不同</span></span><br><span class="line">                k -= newIndex2 - index2 + <span class="number">1</span>;</span><br><span class="line">                index2 = newIndex2 + <span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">double</span> <span class="title">findMedianSortedArrays</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums1, <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums2)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> totalLength = nums1.size() + nums2.size();</span><br><span class="line">        <span class="keyword">if</span> (totalLength % <span class="number">2</span> == <span class="number">1</span>) &#123;  <span class="comment">//调用求第k大进行求解</span></span><br><span class="line">            <span class="keyword">return</span> getKthElement(nums1, nums2, (totalLength + <span class="number">1</span>) / <span class="number">2</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">return</span> (getKthElement(nums1, nums2, totalLength / <span class="number">2</span>) + getKthElement(nums1, nums2, totalLength / <span class="number">2</span> + <span class="number">1</span>)) / <span class="number">2.0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h3 id="复杂度分析-1"><a href="#复杂度分析-1" class="headerlink" title="复杂度分析"></a>复杂度分析</h3><blockquote>
+<ul>
+<li>时间复杂度：求第$k$大的时候，采用的是二分法，因此时间复杂度为$O(log(m+n))$</li>
+<li>空间复杂度：$O(1)$，只申请了常数的空间</li>
+</ul>
+</blockquote>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/23/%E6%AF%8F%E5%A4%A9%E4%B8%80%E9%81%93%E7%AE%97%E6%B3%95%E9%A2%98/0017%E6%9C%80%E5%B0%8F%E8%A6%86%E7%9B%96%E5%AD%90%E4%B8%B2/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1201,277 +1467,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/10/%E6%AF%8F%E5%A4%A9%E4%B8%80%E9%81%93%E7%AE%97%E6%B3%95%E9%A2%98/0009%20%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E6%9C%80%E8%BF%91%E5%85%AC%E5%85%B1%E7%A5%96%E5%85%88/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Leading Werido">
-      <meta itemprop="description" content="笔记记录">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Something">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/05/10/%E6%AF%8F%E5%A4%A9%E4%B8%80%E9%81%93%E7%AE%97%E6%B3%95%E9%A2%98/0009%20%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E6%9C%80%E8%BF%91%E5%85%AC%E5%85%B1%E7%A5%96%E5%85%88/" class="post-title-link" itemprop="url">0009二叉树的最近公共祖先</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-05-10 20:21:00" itemprop="dateCreated datePublished" datetime="2020-05-10T20:21:00+08:00">2020-05-10</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-06-09 00:17:10" itemprop="dateModified" datetime="2020-06-09T00:17:10+08:00">2020-06-09</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%AF%8F%E5%A4%A9%E4%B8%80%E9%81%93%E7%AE%97%E6%B3%95%E9%A2%98/" itemprop="url" rel="index"><span itemprop="name">每天一道算法题</span></a>
-                </span>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus：</span>
-    
-    <a title="disqus" href="/2020/05/10/%E6%AF%8F%E5%A4%A9%E4%B8%80%E9%81%93%E7%AE%97%E6%B3%95%E9%A2%98/0009%20%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E6%9C%80%E8%BF%91%E5%85%AC%E5%85%B1%E7%A5%96%E5%85%88/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/05/10/每天一道算法题/0009 二叉树的最近公共祖先/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>2.3k</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>2 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <font size=8>二叉树的最近公共祖先</font>
-
-<blockquote>
-<p>编号：0009</p>
-<p>试题来源：<a href="https://leetcode-cn.com/problems/lowest-common-ancestor-of-a-binary-tree/" target="_blank" rel="noopener">leetcode</a></p>
-</blockquote>
-<p>[TOC]</p>
-<h1 id="试题描述"><a href="#试题描述" class="headerlink" title="试题描述"></a>试题描述</h1><p>给定一个二叉树，找到该树中两个指定节点的最近公共祖先。</p>
-<p>公共祖先的定义为：对于有根树$T$的两个结点$p,q$，最近公共节点表示为一个结点$x$，满足$x$时$p,q$的祖先，且$x$的深度尽可能大(<strong>一个节点也可以是它自己的祖先</strong>)</p>
-<blockquote>
-<p>此题中所有的节点的值<code>val</code>都是唯一的</p>
-<p>p,q为不同节点，且均存在于给定的二叉树中</p>
-</blockquote>
-<p>二叉树结构定义如下：</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">TreeNode</span> &#123;</span></span><br><span class="line">    <span class="keyword">int</span> val;</span><br><span class="line">    TreeNode *left;</span><br><span class="line">    TreeNode *right;</span><br><span class="line">    TreeNode(<span class="keyword">int</span> x) : val(x), left(<span class="literal">NULL</span>), right(<span class="literal">NULL</span>) &#123;&#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<h1 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h1><p><img src="0009-01.jpg" alt="0009-01"></p>
-<p><img src="0009-02.jpg" alt="0009-02"></p>
-<h1 id="解答算法"><a href="#解答算法" class="headerlink" title="解答算法"></a>解答算法</h1><p><a href="https://leetcode-cn.com/problems/lowest-common-ancestor-of-a-binary-tree/solution/er-cha-shu-de-zui-jin-gong-gong-zu-xian-by-leetc-2/" target="_blank" rel="noopener">官方解答传送门</a></p>
-<h2 id="递归-自己想的"><a href="#递归-自己想的" class="headerlink" title="递归(自己想的)"></a>递归(自己想的)</h2><h3 id="思路分析"><a href="#思路分析" class="headerlink" title="思路分析"></a>思路分析</h3><p>从根节点进行遍历，当遍历到$p,q$的时候，返回一个<code>vector&lt;TreeNode*&gt;</code>数组，存储他们的所有祖先，这样比较$p,q$的公共祖先，从深度最深的开始比较，最深的祖先就是所求。</p>
-<p>时间主要浪费在我对数组进行了两次遍历</p>
-<h3 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">TreeNode* <span class="title">lowestCommonAncestor</span><span class="params">(TreeNode* root, TreeNode* p, TreeNode* q)</span> </span>&#123;</span><br><span class="line">        <span class="built_in">std</span>::<span class="built_in">vector</span>&lt;TreeNode*&gt; pList, qList;</span><br><span class="line">        get_child(root, p, pList);</span><br><span class="line">        get_child(root, q, qList);</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">auto</span> pIter = pList.begin(); pIter &lt; pList.end(); pIter++)  <span class="comment">//找到共同的祖先节点</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">std</span>::<span class="built_in">vector</span>&lt;TreeNode*&gt;::iterator it = find(qList.begin(), qList.end(), *pIter);</span><br><span class="line">            <span class="keyword">if</span> (it != qList.end())</span><br><span class="line">                <span class="keyword">return</span> (*pIter);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">NULL</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">get_child</span><span class="params">(TreeNode* root, TreeNode* destination, <span class="built_in">std</span>::<span class="built_in">vector</span>&lt;TreeNode*&gt;&amp; childlist)</span>  <span class="comment">//递归得到祖先的函数</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (root == <span class="literal">NULL</span>)  <span class="comment">//根节点为空，说明找到底了，也没找到</span></span><br><span class="line">            <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        <span class="keyword">if</span> (root-&gt;val == destination-&gt;val)  <span class="comment">//因为val可以代表节点，因此val相同，说明找到了目标节点，将其存入childList中（目标节点就是最深的祖先节点）</span></span><br><span class="line">        &#123;</span><br><span class="line">            childlist.push_back(root);</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (get_child(root-&gt;left, destination, childlist) || get_child(root-&gt;right,destination,childlist))  <span class="comment">//如果返回为ture说明root是祖先节点</span></span><br><span class="line">        &#123;</span><br><span class="line">            childlist.push_back(root);</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<h3 id="复杂度分析"><a href="#复杂度分析" class="headerlink" title="复杂度分析"></a>复杂度分析</h3><blockquote>
-<ul>
-<li>时间复杂度：整个过程中对数进行了两次遍历，同时又对祖先数组进行了遍历，因此最坏情况事件复杂度为$O(n)+O(n)+O(logn)$，也就是$O(n)$</li>
-<li>空间复杂度：整个过程中，用到了递归栈空间，最坏情况下也为$O(n)$</li>
-</ul>
-</blockquote>
-<h2 id="递归思路-官方题解"><a href="#递归思路-官方题解" class="headerlink" title="递归思路(官方题解)"></a>递归思路(官方题解)</h2><h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>定义$f_x$为$x$节点的子树是否包含$p$节点或者$q$节点，如果包含为<code>true</code>，如果不包含为<code>false</code>。</p>
-<p>那么符合条件的最深的公共节点<code>x</code>一定满足如下条件$(f_{lson}\&amp;\&amp;f_{rson})||((x=p||x=q) \&amp;\&amp;(f_{lson}f_{rson}))$</p>
-<h3 id="代码实现-1"><a href="#代码实现-1" class="headerlink" title="代码实现"></a>代码实现</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    TreeNode* ans; <span class="comment">//全局变量，存放公共祖先节点</span></span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">dfs</span><span class="params">(TreeNode* root, TreeNode* p, TreeNode* q)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (root == <span class="literal">nullptr</span>) <span class="keyword">return</span> <span class="literal">false</span>;  <span class="comment">//空节点返回false，递归终止</span></span><br><span class="line">        <span class="keyword">bool</span> lson = dfs(root-&gt;left, p, q);  <span class="comment">//递归左子树</span></span><br><span class="line">        <span class="keyword">bool</span> rson = dfs(root-&gt;right, p, q); <span class="comment">//递归右子树</span></span><br><span class="line">        <span class="keyword">if</span> ((lson &amp;&amp; rson) || ((root-&gt;val == p-&gt;val || root-&gt;val == q-&gt;val) &amp;&amp; (lson || rson))) &#123;  <span class="comment">//满足条件更新ans</span></span><br><span class="line">            ans = root;</span><br><span class="line">        &#125; </span><br><span class="line">        <span class="keyword">return</span> lson || rson || (root-&gt;val == p-&gt;val || root-&gt;val == q-&gt;val);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function">TreeNode* <span class="title">lowestCommonAncestor</span><span class="params">(TreeNode* root, TreeNode* p, TreeNode* q)</span> </span>&#123;</span><br><span class="line">        dfs(root, p, q);</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<h3 id="复杂度"><a href="#复杂度" class="headerlink" title="复杂度"></a>复杂度</h3><blockquote>
-<ul>
-<li>时间复杂度：$O(n)$，只进行了一次遍历</li>
-<li>空间复杂度：递归所利用的栈空间，最坏情况下$O(n)$</li>
-</ul>
-</blockquote>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/08/%E6%AF%8F%E5%A4%A9%E4%B8%80%E9%81%93%E7%AE%97%E6%B3%95%E9%A2%98/0008%20%E6%9C%80%E5%A4%A7%E6%AD%A3%E6%96%B9%E5%BD%A2/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Leading Werido">
-      <meta itemprop="description" content="笔记记录">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Something">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/05/08/%E6%AF%8F%E5%A4%A9%E4%B8%80%E9%81%93%E7%AE%97%E6%B3%95%E9%A2%98/0008%20%E6%9C%80%E5%A4%A7%E6%AD%A3%E6%96%B9%E5%BD%A2/" class="post-title-link" itemprop="url">0008最大正方形</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-05-08 16:46:00" itemprop="dateCreated datePublished" datetime="2020-05-08T16:46:00+08:00">2020-05-08</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-06-09 00:17:10" itemprop="dateModified" datetime="2020-06-09T00:17:10+08:00">2020-06-09</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%AF%8F%E5%A4%A9%E4%B8%80%E9%81%93%E7%AE%97%E6%B3%95%E9%A2%98/" itemprop="url" rel="index"><span itemprop="name">每天一道算法题</span></a>
-                </span>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus：</span>
-    
-    <a title="disqus" href="/2020/05/08/%E6%AF%8F%E5%A4%A9%E4%B8%80%E9%81%93%E7%AE%97%E6%B3%95%E9%A2%98/0008%20%E6%9C%80%E5%A4%A7%E6%AD%A3%E6%96%B9%E5%BD%A2/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/05/08/每天一道算法题/0008 最大正方形/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>3.1k</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>3 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <font size=8>最大正方形</font>
-
-<blockquote>
-<p>编号：0008</p>
-<p>试题来源：<a href="https://leetcode-cn.com/problems/maximal-square/" target="_blank" rel="noopener">leetcode</a></p>
-</blockquote>
-<p>[TOC]</p>
-<h1 id="试题描述"><a href="#试题描述" class="headerlink" title="试题描述"></a>试题描述</h1><p>在一个由$0$和$1$组成的二维矩阵中，找到只包含1的最大正方形，并返回其<strong>面积</strong>。</p>
-<h1 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h1><p><img src="0008-01.jpg" alt="0008-01"></p>
-<h1 id="算法"><a href="#算法" class="headerlink" title="算法"></a>算法</h1><p><a href="https://leetcode-cn.com/problems/maximal-square/solution/zui-da-zheng-fang-xing-by-leetcode-solution/" target="_blank" rel="noopener">官方题解传送门</a></p>
-<h2 id="暴力法"><a href="#暴力法" class="headerlink" title="暴力法"></a>暴力法</h2><h3 id="思路分析"><a href="#思路分析" class="headerlink" title="思路分析"></a>思路分析</h3><p>对<code>matrix</code>二维数组进行遍历，当遍历到<code>matrix[i][j] == 1</code>的时候，以<code>[i,j]</code>作为可能正方形的左上角进行检验，每次检验一行和一列，例如，已经判断出正方形边长为<code>tempLen</code>，下一次就检验第<code>i+tempLen</code>行和<code>j+tempLen</code>列，如果全为$1$，那么此次检验仍成功，继续。判断失败后，更新<code>maxLen</code>全局变量。</p>
-<p>最后返回最大边长的平方，因为我们求解的是面积。</p>
-<h3 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">maximalSquare</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">char</span>&gt;&gt;&amp; matrix)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> maxLen = <span class="number">0</span>, tempLen = <span class="number">0</span>;  <span class="comment">//maxLen存储遇到的最大正方形边长，tempLen作为临时量，存储当前遇到的正方形边边长</span></span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i&lt;matrix.size();i++)   <span class="comment">//两重循环遍历矩阵</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">0</span>; j&lt; matrix[i].size();j++)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">if</span>(matrix[i][j] == <span class="string">'1'</span>)   <span class="comment">//等于1的话进行判断</span></span><br><span class="line">                &#123;</span><br><span class="line">                    tempLen = <span class="number">1</span>;</span><br><span class="line">                    <span class="keyword">while</span>(tempLen + i &lt; matrix.size() &amp;&amp; tempLen + j &lt; matrix[i].size())    <span class="comment">//注意一定要在矩阵范围内寻找</span></span><br><span class="line">                    &#123;</span><br><span class="line">                        <span class="keyword">bool</span> flag = <span class="literal">false</span>;   <span class="comment">//标定正常退出还是因为不满足退出</span></span><br><span class="line">                        <span class="keyword">for</span>(<span class="keyword">int</span> m = <span class="number">0</span>; m &lt; tempLen;m++)</span><br><span class="line">                        &#123;</span><br><span class="line">                            <span class="keyword">if</span>(matrix[i+m][j+tempLen] != <span class="string">'1'</span> || matrix[i+tempLen][j+m] != <span class="string">'1'</span>)</span><br><span class="line">                            &#123;</span><br><span class="line">                                flag = <span class="literal">true</span>;</span><br><span class="line">                                <span class="keyword">break</span>;</span><br><span class="line">                            &#125;</span><br><span class="line">                                </span><br><span class="line">                            <span class="keyword">if</span>(matrix[i + tempLen][j+tempLen] != <span class="string">'1'</span>)</span><br><span class="line">                            &#123;</span><br><span class="line">                                flag = <span class="literal">true</span>;</span><br><span class="line">                                <span class="keyword">break</span>;</span><br><span class="line">                            &#125;</span><br><span class="line">                        &#125;</span><br><span class="line">                        <span class="keyword">if</span>(!flag)   <span class="comment">//正常退出tempLen+1，进行下一轮的判断</span></span><br><span class="line">                            tempLen++;</span><br><span class="line">                        <span class="keyword">else</span></span><br><span class="line">                            <span class="keyword">break</span>;</span><br><span class="line">                    &#125;</span><br><span class="line">                    maxLen = max(maxLen,tempLen);  <span class="comment">//更新maxLen</span></span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> maxLen * maxLen;        <span class="comment">//返回面积</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<p><em>下面是官方题解</em></p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">maximalSquare</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">char</span>&gt;&gt;&amp; matrix)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (matrix.size() == <span class="number">0</span> || matrix[<span class="number">0</span>].size() == <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        &#125;  <span class="comment">//判断一下矩形的形状</span></span><br><span class="line">        <span class="keyword">int</span> maxSide = <span class="number">0</span>;<span class="comment">//最大边长</span></span><br><span class="line">        <span class="keyword">int</span> rows = matrix.size(), columns = matrix[<span class="number">0</span>].size();<span class="comment">//取行数和列数</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; rows; i++) &#123;    <span class="comment">//二重循环遍历</span></span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; columns; j++) &#123;</span><br><span class="line">                <span class="keyword">if</span> (matrix[i][j] == <span class="string">'1'</span>) &#123;</span><br><span class="line">                    <span class="comment">// 遇到一个 1 作为正方形的左上角</span></span><br><span class="line">                    maxSide = max(maxSide, <span class="number">1</span>);</span><br><span class="line">                    <span class="comment">// 计算可能的最大正方形边长</span></span><br><span class="line">                    <span class="keyword">int</span> currentMaxSide = min(rows - i, columns - j);</span><br><span class="line">                    <span class="keyword">for</span> (<span class="keyword">int</span> k = <span class="number">1</span>; k &lt; currentMaxSide; k++) &#123;</span><br><span class="line">                        <span class="comment">// 判断新增的一行一列是否均为 1</span></span><br><span class="line">                        <span class="keyword">bool</span> flag = <span class="literal">true</span>;</span><br><span class="line">                        <span class="keyword">if</span> (matrix[i + k][j + k] == <span class="string">'0'</span>) &#123;</span><br><span class="line">                            <span class="keyword">break</span>;</span><br><span class="line">                        &#125;</span><br><span class="line">                        <span class="keyword">for</span> (<span class="keyword">int</span> m = <span class="number">0</span>; m &lt; k; m++) &#123;</span><br><span class="line">                            <span class="keyword">if</span> (matrix[i + k][j + m] == <span class="string">'0'</span> || matrix[i + m][j + k] == <span class="string">'0'</span>) &#123;</span><br><span class="line">                                flag = <span class="literal">false</span>;</span><br><span class="line">                                <span class="keyword">break</span>;</span><br><span class="line">                            &#125;</span><br><span class="line">                        &#125;</span><br><span class="line">                        <span class="keyword">if</span> (flag) &#123;</span><br><span class="line">                            maxSide = max(maxSide, k + <span class="number">1</span>);</span><br><span class="line">                        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                            <span class="keyword">break</span>;</span><br><span class="line">                        &#125;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> maxSquare = maxSide * maxSide;</span><br><span class="line">        <span class="keyword">return</span> maxSquare;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<p>基本没啥差别，和我写的</p>
-<h3 id="复杂度"><a href="#复杂度" class="headerlink" title="复杂度"></a>复杂度</h3><blockquote>
-<ul>
-<li>时间复杂度：$O(m<em>n</em>min(m,n)^2)$；遍历整个矩阵的时间复杂度为$O(m*n)$，对于正方形，遍历的事件复杂度为$O(min(m,n)^2)$</li>
-<li>空间复杂度：$O(1)$，整个过程中使用的空间复杂度是常数</li>
-</ul>
-</blockquote>
-<h2 id="动态规划"><a href="#动态规划" class="headerlink" title="动态规划"></a>动态规划</h2><h3 id="思路分析-1"><a href="#思路分析-1" class="headerlink" title="思路分析"></a>思路分析</h3><p>$dp(i,j)$表示以$(i,j)$为右下角，且只包含$1$的正方形的边长最大值。</p>
-<p>如果<code>matrix[i][j]==0</code>，那么显然不可能在一个只含有$1$的正方形中，因此$dp(i,j)=0$</p>
-<p>如果<code>matrix[i][j]==1</code>，那么显然<code>dp[i][j]=min(dp(i-1,j),dp(i-1,j-1),dp(i,j-1))+1</code>。</p>
-<p>得出状态转移方程</p>
-<h3 id="代码实现-1"><a href="#代码实现-1" class="headerlink" title="代码实现"></a>代码实现</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">maximalSquare</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">char</span>&gt;&gt;&amp; matrix)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (matrix.size() == <span class="number">0</span> || matrix[<span class="number">0</span>].size() == <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        &#125;  <span class="comment">//判断矩形的形状</span></span><br><span class="line">        <span class="keyword">int</span> maxSide = <span class="number">0</span>;    <span class="comment">//正方形的最大边长</span></span><br><span class="line">        <span class="keyword">int</span> rows = matrix.size(), columns = matrix[<span class="number">0</span>].size();   <span class="comment">//判断一下行，列</span></span><br><span class="line">        <span class="function"><span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt; <span class="title">dp</span><span class="params">(rows, <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;(columns))</span></span>;     <span class="comment">//创建一个dp矩形</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; rows; i++) &#123;     <span class="comment">//二重循环遍历，动态规划</span></span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; columns; j++) &#123;</span><br><span class="line">                <span class="keyword">if</span> (matrix[i][j] == <span class="string">'1'</span>) &#123;</span><br><span class="line">                    <span class="keyword">if</span> (i == <span class="number">0</span> || j == <span class="number">0</span>) &#123;</span><br><span class="line">                        dp[i][j] = <span class="number">1</span>;</span><br><span class="line">                    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                        dp[i][j] = min(min(dp[i - <span class="number">1</span>][j], dp[i][j - <span class="number">1</span>]), dp[i - <span class="number">1</span>][j - <span class="number">1</span>]) + <span class="number">1</span>;</span><br><span class="line">                    &#125;</span><br><span class="line">                    maxSide = max(maxSide, dp[i][j]);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> maxSquare = maxSide * maxSide;</span><br><span class="line">        <span class="keyword">return</span> maxSquare;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<h3 id="复杂度分析"><a href="#复杂度分析" class="headerlink" title="复杂度分析"></a>复杂度分析</h3><blockquote>
-<ul>
-<li>时间复杂度：$O(mn)$，整个过程中只进行两层遍历</li>
-<li>空间复杂度：$O(mn)$，创建了一个和原始矩阵大小相同的矩阵$dp$</li>
-</ul>
-</blockquote>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1541,7 +1536,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">27</span>
+          <span class="site-state-item-count">29</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
