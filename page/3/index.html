@@ -161,6 +161,153 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/11/%E6%AF%8F%E5%A4%A9%E4%B8%80%E9%81%93%E7%AE%97%E6%B3%95%E9%A2%98/0010%20Pow(x,n)/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Leading Werido">
+      <meta itemprop="description" content="笔记记录">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Something">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/05/11/%E6%AF%8F%E5%A4%A9%E4%B8%80%E9%81%93%E7%AE%97%E6%B3%95%E9%A2%98/0010%20Pow(x,n)/" class="post-title-link" itemprop="url">0010Pow(x,n)</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-05-11 20:58:00" itemprop="dateCreated datePublished" datetime="2020-05-11T20:58:00+08:00">2020-05-11</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-06-09 00:17:10" itemprop="dateModified" datetime="2020-06-09T00:17:10+08:00">2020-06-09</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%AF%8F%E5%A4%A9%E4%B8%80%E9%81%93%E7%AE%97%E6%B3%95%E9%A2%98/" itemprop="url" rel="index"><span itemprop="name">每天一道算法题</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/2020/05/11/%E6%AF%8F%E5%A4%A9%E4%B8%80%E9%81%93%E7%AE%97%E6%B3%95%E9%A2%98/0010%20Pow(x,n)/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/05/11/每天一道算法题/0010 Pow(x,n)/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>2.2k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>2 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <font size = 8>Pow(x,n)</font>
+
+<blockquote>
+<p>编号：0010</p>
+<p>试题来源：<a href="https://leetcode-cn.com/problems/powx-n/" target="_blank" rel="noopener">leetcode</a></p>
+</blockquote>
+<h1 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h1><p>实现$pow(x,n)$，即计算$x$的$n$次幂</p>
+<blockquote>
+<p>其中$-100.0 &lt; x&lt;100.0$</p>
+<p>$n$是32位有符号整数，其数值范围是$[-2^{31},2^{31}-1]$，也就是<code>c++</code>中<code>int</code>的取值范围</p>
+</blockquote>
+<h1 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h1><ul>
+<li><p>示例1：</p>
+<p><img src="0010-01.jpg" alt="0010-01"></p>
+</li>
+<li><p>示例2：</p>
+<p><img src="0010-02.jpg" alt="0010-02"></p>
+</li>
+<li><p>示例3：</p>
+<p><img src="0010-03.jpg" alt="0010-03"></p>
+</li>
+</ul>
+<h1 id="解答算法"><a href="#解答算法" class="headerlink" title="解答算法"></a>解答算法</h1><h2 id="递归-我的解法"><a href="#递归-我的解法" class="headerlink" title="递归(我的解法)"></a>递归(我的解法)</h2><h3 id="算法思路"><a href="#算法思路" class="headerlink" title="算法思路"></a>算法思路</h3><p>对于底数$x$来说，有特殊情况$x==1$，此时不用判断$n$直接输出$0$就好。</p>
+<p>对于指数$n$来说，当$n==0$的时候，不适用于递归表达式，直接输出$1$就好</p>
+<p>对于一般情况来说，$x^n$有两种可能，一种是$n$是奇数，另一种是$n$是偶数，当$n$是偶数的时候，显然$x^{n} = x^{\frac{n}{2}}<em>x^{\frac{n}{2}}$这里面，显然把$x^{\frac{n}{2}}$利用了两次，这样的话，就相对于逐个递乘减少了一般的工作量；当$n$时偶数的时候，$$x^{n} = x^{\frac{n}{2}}</em>x^{\frac{n}{2}} * x$$只是在之前的基础上多乘了一个x，计算步骤也是很小的。</p>
+<p>然后递归的终止条件就是$n==1$，此时，只要返回$x$就好。</p>
+<p>当计算$n&lt;0$的时候，我用的是$x^{n} = \frac{1}{x^{-n}}$，但是这里存在越界的可能，对于$-2^{31}$来说，其相反数$2^{31}$不能用<code>int</code>类型表示，因此我把式子改写成了$x^n=\frac{1}{x^{-n-1}*x}$这样就避免了$-n$越界的可能性。</p>
+<h3 id="实现代码"><a href="#实现代码" class="headerlink" title="实现代码"></a>实现代码</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">double</span> <span class="title">myPow</span><span class="params">(<span class="keyword">double</span> x, <span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (x == <span class="number">1</span>)   <span class="comment">//当底数为1的时候，直接输出1</span></span><br><span class="line">            <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">if</span> (n &lt; <span class="number">0</span>)    <span class="comment">//当指数小于0的时候，先转换成指数大于0的情况</span></span><br><span class="line">            <span class="keyword">return</span> <span class="number">1</span> / (x * myPow(x, -(n + <span class="number">1</span>)));</span><br><span class="line">        <span class="keyword">if</span> (n == <span class="number">0</span>)   <span class="comment">//当指数为0的时候，直接输出1</span></span><br><span class="line">            <span class="keyword">return</span> <span class="number">1</span>; </span><br><span class="line">        <span class="keyword">if</span> (n == <span class="number">1</span>)  <span class="comment">//当指数为1的时候，递归终止</span></span><br><span class="line">            <span class="keyword">return</span> x;</span><br><span class="line">        <span class="keyword">double</span> result = myPow(x, n / <span class="number">2</span>);  <span class="comment">//递归调用</span></span><br><span class="line">        <span class="keyword">if</span> (n % <span class="number">2</span> == <span class="number">0</span>)  <span class="comment">//偶数和结束分开讨论</span></span><br><span class="line">            <span class="keyword">return</span> result * result;</span><br><span class="line">        <span class="keyword">if</span> (n % <span class="number">2</span> == <span class="number">1</span>)</span><br><span class="line">            <span class="keyword">return</span> result * result * x;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;  <span class="comment">//这个是因为程序要求一定要有返回值，所以加上的，无意义</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h3 id="复杂度分析"><a href="#复杂度分析" class="headerlink" title="复杂度分析"></a>复杂度分析</h3><blockquote>
+<ul>
+<li>时间复杂度：每一次递归仅进行了一次操作，一共进行了$logn$次递归，因此时间复杂度$O(logn)$</li>
+<li>空间复杂度：整个过程中用到的空间是递归用到的栈空间，深度应当是$logn$，因此空间复杂度$O(logn)$</li>
+</ul>
+</blockquote>
+<p>这是我自己第一次两个100%击败，有点意思—__—</p>
+<h2 id="递归-官方解答"><a href="#递归-官方解答" class="headerlink" title="递归(官方解答)"></a>递归(官方解答)</h2><p>算法思路和复杂度分析和我的一样，不列举了。</p>
+<h3 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">double</span> <span class="title">quickMul</span><span class="params">(<span class="keyword">double</span> x, <span class="keyword">long</span> <span class="keyword">long</span> N)</span> </span>&#123;  <span class="comment">//指数变成N，避免了溢出问题</span></span><br><span class="line">        <span class="keyword">if</span> (N == <span class="number">0</span>) &#123;  <span class="comment">//指数为0的情况</span></span><br><span class="line">            <span class="keyword">return</span> <span class="number">1.0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">double</span> y = quickMul(x, N / <span class="number">2</span>);    <span class="comment">//递归调用</span></span><br><span class="line">        <span class="keyword">return</span> N % <span class="number">2</span> == <span class="number">0</span> ? y * y : y * y * x;  <span class="comment">//这个对奇偶的利用有点简洁</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">double</span> <span class="title">myPow</span><span class="params">(<span class="keyword">double</span> x, <span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">long</span> <span class="keyword">long</span> N = n;</span><br><span class="line">        <span class="keyword">return</span> N &gt;= <span class="number">0</span> ? quickMul(x, N) : <span class="number">1.0</span> / quickMul(x, -N); <span class="comment">//对正负的利用</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>三目运算符真好使</p>
+<h2 id="迭代-官方解答"><a href="#迭代-官方解答" class="headerlink" title="迭代(官方解答)"></a>迭代(官方解答)</h2><h3 id="算法思路-1"><a href="#算法思路-1" class="headerlink" title="算法思路"></a>算法思路</h3><p>迭代思路用到了整数的二进制表示，$n$是一个十进制整数，它一定可以被转化成一个二进制数$i_ki_{k-1}\dotso i_0$，那么$n=2^{i_0}+2^{i_1}+\dotso + 2^{i_k}$，因此$x^n=x^{2^{i_0}}<em>\dotso </em>x^{2^{i_k}}$，因此只要知道了二进制数，可以求解其对应的$x^n$</p>
+<h3 id="代码实现-1"><a href="#代码实现-1" class="headerlink" title="代码实现"></a>代码实现</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">double</span> <span class="title">quickMul</span><span class="params">(<span class="keyword">double</span> x, <span class="keyword">long</span> <span class="keyword">long</span> N)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">double</span> ans = <span class="number">1.0</span>;</span><br><span class="line">        <span class="comment">// 贡献的初始值为 x</span></span><br><span class="line">        <span class="keyword">double</span> x_contribute = x;</span><br><span class="line">        <span class="comment">// 在对 N 进行二进制拆分的同时计算答案</span></span><br><span class="line">        <span class="keyword">while</span> (N &gt; <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">if</span> (N % <span class="number">2</span> == <span class="number">1</span>) &#123;</span><br><span class="line">                <span class="comment">// 如果 N 二进制表示的最低位为 1，那么需要计入贡献</span></span><br><span class="line">                ans *= x_contribute;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="comment">// 将贡献不断地平方</span></span><br><span class="line">            x_contribute *= x_contribute;</span><br><span class="line">            <span class="comment">// 舍弃 N 二进制表示的最低位，这样我们每次只要判断最低位即可</span></span><br><span class="line">            N /= <span class="number">2</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">double</span> <span class="title">myPow</span><span class="params">(<span class="keyword">double</span> x, <span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">long</span> <span class="keyword">long</span> N = n;</span><br><span class="line">        <span class="keyword">return</span> N &gt;= <span class="number">0</span> ? quickMul(x, N) : <span class="number">1.0</span> / quickMul(x, -N);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h3 id="复杂度分析-1"><a href="#复杂度分析-1" class="headerlink" title="复杂度分析"></a>复杂度分析</h3><blockquote>
+<ul>
+<li>时间复杂度：整个过程中进行了$logn$层循环，因此时间复杂度为$O(logn)$</li>
+<li>空间复杂度：显然$O(1)$</li>
+</ul>
+</blockquote>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/10/%E6%AF%8F%E5%A4%A9%E4%B8%80%E9%81%93%E7%AE%97%E6%B3%95%E9%A2%98/0009%20%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E6%9C%80%E8%BF%91%E5%85%AC%E5%85%B1%E7%A5%96%E5%85%88/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1552,7 +1699,7 @@ list2[0] + merge(list1,list2[1:])&      otherwise
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">29</span>
+          <span class="site-state-item-count">30</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
