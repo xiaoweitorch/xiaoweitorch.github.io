@@ -161,6 +161,115 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/06/15/%E6%AF%8F%E5%A4%A9%E4%B8%80%E9%81%93%E7%AE%97%E6%B3%95%E9%A2%98/0030%E5%88%B6%E4%BD%9Cm%E6%9D%9F%E8%8A%B1%E6%89%80%E9%9C%80%E8%A6%81%E7%9A%84%E6%9C%80%E5%B0%91%E5%A4%A9%E6%95%B0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Leading Werido">
+      <meta itemprop="description" content="笔记记录">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Something">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/06/15/%E6%AF%8F%E5%A4%A9%E4%B8%80%E9%81%93%E7%AE%97%E6%B3%95%E9%A2%98/0030%E5%88%B6%E4%BD%9Cm%E6%9D%9F%E8%8A%B1%E6%89%80%E9%9C%80%E8%A6%81%E7%9A%84%E6%9C%80%E5%B0%91%E5%A4%A9%E6%95%B0/" class="post-title-link" itemprop="url">每天一道算法题/0030制作m束花所需要的最少天数</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-06-15 23:27:22 / 修改时间：23:41:05" itemprop="dateCreated datePublished" datetime="2020-06-15T23:27:22+08:00">2020-06-15</time>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/2020/06/15/%E6%AF%8F%E5%A4%A9%E4%B8%80%E9%81%93%E7%AE%97%E6%B3%95%E9%A2%98/0030%E5%88%B6%E4%BD%9Cm%E6%9D%9F%E8%8A%B1%E6%89%80%E9%9C%80%E8%A6%81%E7%9A%84%E6%9C%80%E5%B0%91%E5%A4%A9%E6%95%B0/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/06/15/每天一道算法题/0030制作m束花所需要的最少天数/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>1.6k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <font size=8>制作m束花所需要的最少天数</font>
+
+<blockquote>
+<p>编号：0030</p>
+<p>试题来源：<a href="https://leetcode-cn.com/problems/minimum-number-of-days-to-make-m-bouquets/" target="_blank" rel="noopener">leetcode</a></p>
+<p>my blog:<a href="https://leadingwerido.com" target="_blank" rel="noopener">Something</a></p>
+</blockquote>
+<h1 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h1><p>给定一个整数数组<code>bloomDay</code>，以及两个整数<code>m</code>和<code>k</code>。</p>
+<p>现需要制作<code>m</code>束花。制作花束的时候，需要使用花园中<strong>相邻</strong>的<code>k</code>朵花。</p>
+<p>花园中有<code>n</code>朵花，第<code>i</code>朵花会在<code>bloomDay[i]</code>时盛开，恰好可以用于一束花中。</p>
+<p>请返回从花园中摘<code>m</code>束花需要等待的最少的天数。如果不能摘到<code>m</code>束花，则返回-1。</p>
+<h1 id="解答算法"><a href="#解答算法" class="headerlink" title="解答算法"></a>解答算法</h1><h2 id="算法思路"><a href="#算法思路" class="headerlink" title="算法思路"></a>算法思路</h2><p>此题目用到的方法是<strong>二分法</strong>。好像只要答案符合单调的性质，都可以使用二分法进行解答。</p>
+<p>这里面返回的天数<code>result</code>显然符合单调性，如果<code>result</code>满足条件，那么<code>result+1</code>显然，也会满足条件，因此适用于二分法。</p>
+<p>那么假定我们以<code>bloomDay</code>中最小的数作为<code>l</code>，最大的数作为<code>r</code>，那么利用正常的二分法的思路就可以，判断<code>mid</code>是否满足条件，如果满足，更新<code>r</code>，否则，更新<code>l</code>。唯一区别的地方在于，如果满足条件，同时更新<code>result = mid</code>。</p>
+<p>这里需要定义一个<code>check</code>函数，来判断是否满足条件。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">check</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; bloomDay, <span class="keyword">int</span> m, <span class="keyword">int</span> k, <span class="keyword">int</span> mid)</span></span></span><br><span class="line"><span class="function">	</span>&#123;</span><br><span class="line">		<span class="keyword">int</span> times = <span class="number">0</span>, size = bloomDay.size(), tmpLen = <span class="number">0</span>;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; size; ++i)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">if</span>(bloomDay[i] &lt;= mid)</span><br><span class="line">			&#123;</span><br><span class="line">				++tmpLen;</span><br><span class="line">				<span class="keyword">if</span>(tmpLen &gt;= k)</span><br><span class="line">				&#123;</span><br><span class="line">					++times;</span><br><span class="line">					tmpLen = <span class="number">0</span>;</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">else</span></span><br><span class="line">			&#123;</span><br><span class="line">				tmpLen = <span class="number">0</span>;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		<span class="keyword">return</span> (times &gt;= m);</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line">	<span class="function"><span class="keyword">bool</span> <span class="title">check</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; bloomDay, <span class="keyword">int</span> m, <span class="keyword">int</span> k, <span class="keyword">int</span> mid)</span></span></span><br><span class="line"><span class="function">	</span>&#123;</span><br><span class="line">		<span class="keyword">int</span> times = <span class="number">0</span>, size = bloomDay.size(), tmpLen = <span class="number">0</span>;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; size; ++i)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">if</span>(bloomDay[i] &lt;= mid)</span><br><span class="line">			&#123;</span><br><span class="line">				++tmpLen;</span><br><span class="line">				<span class="keyword">if</span>(tmpLen &gt;= k)</span><br><span class="line">				&#123;</span><br><span class="line">					++times;</span><br><span class="line">					tmpLen = <span class="number">0</span>;</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">else</span></span><br><span class="line">			&#123;</span><br><span class="line">				tmpLen = <span class="number">0</span>;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		<span class="keyword">return</span> (times &gt;= m);</span><br><span class="line">	&#125;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">minDays</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; bloomDay, <span class="keyword">int</span> m, <span class="keyword">int</span> k)</span> </span>&#123;</span><br><span class="line">    	<span class="keyword">int</span> l = *min_element(bloomDay.begin(), bloomDay.end()), r = *max_element(bloomDay.begin(), bloomDay.end()), result = <span class="number">-1</span>;</span><br><span class="line">    	<span class="keyword">if</span>(bloomDay.size() &lt; m*k)</span><br><span class="line">    	&#123;</span><br><span class="line">    		<span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">    	&#125;</span><br><span class="line">    	<span class="keyword">while</span>(l &lt;= r)</span><br><span class="line">    	&#123;</span><br><span class="line">    		<span class="keyword">int</span> mid = (l + r) / <span class="number">2</span>;</span><br><span class="line">    		<span class="keyword">if</span>(check(bloomDay, m, k, mid))</span><br><span class="line">    		&#123;</span><br><span class="line">    			result = mid;</span><br><span class="line">    			r = mid - <span class="number">1</span>;</span><br><span class="line">    		&#125;</span><br><span class="line">    		<span class="keyword">else</span></span><br><span class="line">    		&#123;</span><br><span class="line">    			l = mid + <span class="number">1</span>;</span><br><span class="line">    		&#125;</span><br><span class="line">    	&#125;</span><br><span class="line">    	<span class="keyword">return</span> result;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h2 id="复杂度分析"><a href="#复杂度分析" class="headerlink" title="复杂度分析"></a>复杂度分析</h2><blockquote>
+<ul>
+<li>时间复杂度：$O(nlogm)$，因为每次check的时候，都要判断条件，对数组进行遍历。另外，二分法遍历的时间复杂度为$O(logm)$</li>
+<li>空间复杂度：$O(1)$</li>
+</ul>
+</blockquote>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/06/14/%E6%AF%8F%E5%A4%A9%E4%B8%80%E9%81%93%E7%AE%97%E6%B3%95%E9%A2%98/0029%E8%BD%AC%E5%8F%98%E6%95%B0%E7%BB%84%E5%90%8E%E6%9C%80%E6%8E%A5%E8%BF%91%E7%9B%AE%E6%A0%87%E5%80%BC%E7%9A%84%E6%95%B0%E7%BB%84%E5%92%8C/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1273,134 +1382,10 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/27/%E6%AF%8F%E5%A4%A9%E4%B8%80%E9%81%93%E7%AE%97%E6%B3%95%E9%A2%98/0021%E5%92%8C%E5%8F%AF%E8%A2%ABK%E6%95%B4%E9%99%A4%E7%9A%84%E5%AD%90%E6%95%B0%E7%BB%84/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Leading Werido">
-      <meta itemprop="description" content="笔记记录">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Something">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/05/27/%E6%AF%8F%E5%A4%A9%E4%B8%80%E9%81%93%E7%AE%97%E6%B3%95%E9%A2%98/0021%E5%92%8C%E5%8F%AF%E8%A2%ABK%E6%95%B4%E9%99%A4%E7%9A%84%E5%AD%90%E6%95%B0%E7%BB%84/" class="post-title-link" itemprop="url">0021 和可被K整除的子数组</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-05-27 17:26:00" itemprop="dateCreated datePublished" datetime="2020-05-27T17:26:00+08:00">2020-05-27</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-06-09 00:17:11" itemprop="dateModified" datetime="2020-06-09T00:17:11+08:00">2020-06-09</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%AF%8F%E5%A4%A9%E4%B8%80%E9%81%93%E7%AE%97%E6%B3%95%E9%A2%98/" itemprop="url" rel="index"><span itemprop="name">每天一道算法题</span></a>
-                </span>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus：</span>
-    
-    <a title="disqus" href="/2020/05/27/%E6%AF%8F%E5%A4%A9%E4%B8%80%E9%81%93%E7%AE%97%E6%B3%95%E9%A2%98/0021%E5%92%8C%E5%8F%AF%E8%A2%ABK%E6%95%B4%E9%99%A4%E7%9A%84%E5%AD%90%E6%95%B0%E7%BB%84/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/05/27/每天一道算法题/0021和可被K整除的子数组/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>958</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <font size= 8>和可被K整除的子数组</font>
-
-<blockquote>
-<p>编号：0021</p>
-<p>试题来源：<a href="https://leetcode-cn.com/problems/subarray-sums-divisible-by-k/" target="_blank" rel="noopener">leetcode</a></p>
-</blockquote>
-<p>[TOC]</p>
-<h1 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h1><p>给定一个整数数组<code>A</code>，返回其中元素之和可被<code>K</code>整除的(连续、非空)子数组的数目</p>
-<blockquote>
-<ul>
-<li>$1\leq A.length\leq 30000$</li>
-<li>$-10000\leq A[i]\leq 10000$</li>
-<li>$2\leq K\leq 10000$</li>
-</ul>
-</blockquote>
-<h1 id="解答算法"><a href="#解答算法" class="headerlink" title="解答算法"></a>解答算法</h1><h2 id="逐一统计"><a href="#逐一统计" class="headerlink" title="逐一统计"></a>逐一统计</h2><h3 id="算法思路"><a href="#算法思路" class="headerlink" title="算法思路"></a>算法思路</h3><p>假设存在数组<code>P[i]</code>，记录的是从$A[0\dots i]$的数组和，那么要判断从$A[i]$到$A[j]$的子数组是否符合要求，只要$P[j]-P[i-1]$可以被$K$整除就可以，也就是说只要$P[j]\%K == P[i-1] \%K$，就可以了，因此可以用一个<code>hash_map</code>存放$P[i]%K$，这样当遍历到<code>P[j]</code>的时候，只要去哈希表中进行查找，如果$P[j]\%K$已经存在的话，那么就会有该余数对应的<code>times</code>的子数组满足要求；而且又多了一个$P[i]$满足这样的余数，因此<code>++hash_map[count]</code>。</p>
-<h3 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">subarraysDivByK</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; A, <span class="keyword">int</span> K)</span> </span>&#123;</span><br><span class="line">        <span class="built_in">unordered_map</span>&lt;<span class="keyword">int</span>, <span class="keyword">int</span>&gt; record = &#123; &#123;<span class="number">0</span>, <span class="number">1</span>&#125; &#125;;  <span class="comment">//存放余数对应的出现次数，注意初始化余数为0的出现次数为1</span></span><br><span class="line">        <span class="keyword">int</span> sum = <span class="number">0</span>, ans = <span class="number">0</span>;   <span class="comment">//sum为遍历到i的P[i],ans就是子数组个数</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> elem : A) &#123;</span><br><span class="line">            sum += elem;   <span class="comment">//首先更新sum</span></span><br><span class="line">            <span class="keyword">int</span> modulus = (sum % K + K) % K;  <span class="comment">//取当前sum的余数，注意这里确保了取得的余数一定是整数</span></span><br><span class="line">            <span class="keyword">if</span> (record.count(modulus)) &#123;  <span class="comment">//如果该余数已经存在，那么添加已经存在的次数进ans</span></span><br><span class="line">                ans += record[modulus];</span><br><span class="line">            &#125;</span><br><span class="line">            ++record[modulus];  <span class="comment">//该余数又多出现了一次</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<h3 id="复杂度分析"><a href="#复杂度分析" class="headerlink" title="复杂度分析"></a>复杂度分析</h3><blockquote>
-<ul>
-<li>时间复杂度：$O(n)$，整个过程中只对数组<code>A</code>进行了一遍遍历</li>
-<li>空间复杂度：$O(min(m,n))$，其中n是<code>A</code>的长度，m是K的大小</li>
-</ul>
-</blockquote>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
 
 
@@ -1466,7 +1451,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">30</span>
+          <span class="site-state-item-count">31</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
