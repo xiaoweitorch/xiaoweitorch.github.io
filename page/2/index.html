@@ -161,6 +161,128 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/30/%E6%AF%8F%E5%A4%A9%E4%B8%80%E9%81%93%E7%AE%97%E6%B3%95%E9%A2%98/0022%E6%9F%B1%E7%8A%B6%E5%9B%BE%E4%B8%AD%E6%9C%80%E5%A4%A7%E7%9A%84%E7%9F%A9%E5%BD%A2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Leading Werido">
+      <meta itemprop="description" content="笔记记录">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Something">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/05/30/%E6%AF%8F%E5%A4%A9%E4%B8%80%E9%81%93%E7%AE%97%E6%B3%95%E9%A2%98/0022%E6%9F%B1%E7%8A%B6%E5%9B%BE%E4%B8%AD%E6%9C%80%E5%A4%A7%E7%9A%84%E7%9F%A9%E5%BD%A2/" class="post-title-link" itemprop="url">0022 柱状图中最大的矩形</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-05-30 04:12:00" itemprop="dateCreated datePublished" datetime="2020-05-30T04:12:00+08:00">2020-05-30</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-06-09 00:17:10" itemprop="dateModified" datetime="2020-06-09T00:17:10+08:00">2020-06-09</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%AF%8F%E5%A4%A9%E4%B8%80%E9%81%93%E7%AE%97%E6%B3%95%E9%A2%98/" itemprop="url" rel="index"><span itemprop="name">每天一道算法题</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/2020/05/30/%E6%AF%8F%E5%A4%A9%E4%B8%80%E9%81%93%E7%AE%97%E6%B3%95%E9%A2%98/0022%E6%9F%B1%E7%8A%B6%E5%9B%BE%E4%B8%AD%E6%9C%80%E5%A4%A7%E7%9A%84%E7%9F%A9%E5%BD%A2/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/05/30/每天一道算法题/0022柱状图中最大的矩形/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>1.7k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>2 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <font size = 8>柱状图中最大的矩形</font>
+
+<blockquote>
+<p>编号：0022</p>
+<p>试题来源：<a href="https://leetcode-cn.com/problems/largest-rectangle-in-histogram/" target="_blank" rel="noopener">leetcode</a></p>
+</blockquote>
+<p>[TOC]</p>
+<h1 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h1><p>给定$n$个非负整数，用来表示柱状图中各个柱子的高度。每个柱子彼此相邻，且宽度为1。</p>
+<p>求在该柱形图中，能够勾勒出来的矩形的最大面积。</p>
+<h1 id="解答算法"><a href="#解答算法" class="headerlink" title="解答算法"></a>解答算法</h1><h2 id="算法思路"><a href="#算法思路" class="headerlink" title="算法思路"></a>算法思路</h2><p>我们在思考最大的矩形的时候，可以任意选取一个柱子<code>i</code>，以其高度<code>height[i]</code>作为基准，向左右两侧进行拓展，如果拓展到的柱子的高度大于等于<code>height[i]</code>，那么其可以作为以当前高度作为高的举行的一部分，如果小于，那么就可以得到其边界。</p>
+<p>这样可以得到左右边界，有了左右边界，同时又有高度，就有了面积。</p>
+<p>要得到左右边界，最笨的方法是对其进行两次遍历，每一次都要从当前位置<code>i</code>进行向左向右遍历，显然最坏的时间复杂度为$O(n)$。</p>
+<p>我们可以使用一个栈<code>stack</code>存放单调的<code>heigth[i]</code>。考虑这样一个事实，如果有$height[i]\geq height[j]且i&lt;j$，那么显然从大于$i$的一个位置进行寻找边界，无论如何也不能选取$i$作为左边界，因为$j$挡住了$i$，因此可以设置这样一个单调栈<code>stack</code>，存放<code>height[i]</code>，以单调递增的顺序存放。</p>
+<p>当我们处理位置<code>i</code>的时候，假设栈中已经存在$a_0,a_1,\dots ,a_k,a_{k+1},\dots,a_m$，那么假设$height[i] &gt; a_k$，那么显然$a_{k+1},\dots,a_m$都不能阻挡<code>i</code>的向左拓展，因此$k$就是其左边界。要找到左边界，我们只需要将栈顶大于等于<code>height[i]</code>的值都pop出来，然后当前栈顶的坐标就是左边界。得到左边界后再将$heigth[i]$加入栈中，形成新的单调栈</p>
+<h2 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">largestRectangleArea</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; heights)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> n = heights.size();   <span class="comment">//数组长度</span></span><br><span class="line">        vector&lt;int&gt; left(n), right(n);  //存储左右两个边界</span><br><span class="line">        </span><br><span class="line">        <span class="built_in">stack</span>&lt;<span class="keyword">int</span>&gt; mono_stack;   <span class="comment">//定义一个栈</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; ++i) &#123;   <span class="comment">//对原数组从左向右进行遍历，得到左边界</span></span><br><span class="line">            <span class="keyword">while</span> (!mono_stack.empty() &amp;&amp; heights[mono_stack.top()] &gt;= heights[i]) &#123;  <span class="comment">//当栈顶值大于等于当前值，移除</span></span><br><span class="line">                mono_stack.pop();</span><br><span class="line">            &#125;</span><br><span class="line">            left[i] = (mono_stack.empty() ? <span class="number">-1</span> : mono_stack.top());    <span class="comment">//左边界的定义</span></span><br><span class="line">            mono_stack.push(i);   <span class="comment">//将当前值移入</span></span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        mono_stack = <span class="built_in">stack</span>&lt;<span class="keyword">int</span>&gt;();    <span class="comment">//对原数组进行从右向左进行遍历，得到右边界</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = n - <span class="number">1</span>; i &gt;= <span class="number">0</span>; --i) &#123;</span><br><span class="line">            <span class="keyword">while</span> (!mono_stack.empty() &amp;&amp; heights[mono_stack.top()] &gt;= heights[i]) &#123;</span><br><span class="line">                mono_stack.pop();</span><br><span class="line">            &#125;</span><br><span class="line">            right[i] = (mono_stack.empty() ? n : mono_stack.top());</span><br><span class="line">            mono_stack.push(i);</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">int</span> ans = <span class="number">0</span>;    <span class="comment">//对整个数组进行遍历，得到答案</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; ++i) &#123;</span><br><span class="line">            ans = max(ans, (right[i] - left[i] - <span class="number">1</span>) * heights[i]);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h2 id="复杂度分析"><a href="#复杂度分析" class="headerlink" title="复杂度分析"></a>复杂度分析</h2><blockquote>
+<ul>
+<li>时间复杂度：整个过程中对数组只进行一次遍历，可以看出在单调栈的操作过程中，我们对每个元素只进行了一次入栈操作，同时也最多只有一次出栈操作，因此时间复杂度为$O(n)$</li>
+<li>空间复杂度：申请了左右边界数组，长度都为$n$，因此空间复杂度为$O(n)$</li>
+</ul>
+</blockquote>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/27/%E6%AF%8F%E5%A4%A9%E4%B8%80%E9%81%93%E7%AE%97%E6%B3%95%E9%A2%98/0021%E5%92%8C%E5%8F%AF%E8%A2%ABK%E6%95%B4%E9%99%A4%E7%9A%84%E5%AD%90%E6%95%B0%E7%BB%84/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1299,133 +1421,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/14/%E6%AF%8F%E5%A4%A9%E4%B8%80%E9%81%93%E7%AE%97%E6%B3%95%E9%A2%98/0012ColorfulBlocks/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Leading Werido">
-      <meta itemprop="description" content="笔记记录">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Something">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/05/14/%E6%AF%8F%E5%A4%A9%E4%B8%80%E9%81%93%E7%AE%97%E6%B3%95%E9%A2%98/0012ColorfulBlocks/" class="post-title-link" itemprop="url">0012 ColorfulBlocks</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-05-14 11:03:00" itemprop="dateCreated datePublished" datetime="2020-05-14T11:03:00+08:00">2020-05-14</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-06-09 00:17:10" itemprop="dateModified" datetime="2020-06-09T00:17:10+08:00">2020-06-09</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%AF%8F%E5%A4%A9%E4%B8%80%E9%81%93%E7%AE%97%E6%B3%95%E9%A2%98/" itemprop="url" rel="index"><span itemprop="name">每天一道算法题</span></a>
-                </span>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus：</span>
-    
-    <a title="disqus" href="/2020/05/14/%E6%AF%8F%E5%A4%A9%E4%B8%80%E9%81%93%E7%AE%97%E6%B3%95%E9%A2%98/0012ColorfulBlocks/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/05/14/每天一道算法题/0012ColorfulBlocks/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>1.5k</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <font size = 8>Colorful Blocks</font>
-
-<blockquote>
-<p>编号：0012</p>
-<p>试题来源：<a href="https://atcoder.jp/contests/abc167/tasks/abc167_e" target="_blank" rel="noopener">AtCoder</a></p>
-</blockquote>
-<p>[TOC]</p>
-<h1 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h1><p>有$N$个连续排列成一行的方块，对他们进行涂色。总共有$M$种可以使用的颜色，不要求一定使用所有的颜色，最多有$K$对相邻的方块有相同的颜色(<strong>例如：涂色为11233，这里面有2对相邻的方块有相同的颜色</strong>)</p>
-<blockquote>
-<p>输入： N   M    K</p>
-<p>输出：可能的次数mod(998244353)</p>
-</blockquote>
-<h1 id="解答算法"><a href="#解答算法" class="headerlink" title="解答算法"></a>解答算法</h1><h2 id="算法思路"><a href="#算法思路" class="headerlink" title="算法思路"></a>算法思路</h2><p>进行遍历判断，题目要求最多有$K$对相邻的方块有相同的颜色，定义$f(N,M,k)$为<strong>有$k$对相邻的方块有相邻的颜色对应的方案数目</strong>，这样题目要求的方案数目就是</p>
-<script type="math/tex; mode=display">
-\sum_{k=0}^{K}f(N,M,k)</script><p>那么接下来就只要思考一下$f(N,M,k)$的求解方式。</p>
-<p>首先思考，当$k=0$的时候，第一个方块可以放$M$种颜色，第二个方块为了和第一个不同，可以放$M-1$种颜色，同样的第三个为了和第二个方块不同，也可以放$M-1$种颜色，以此类推，后面的每一个方块都可以放$M-1$种颜色，因此$f(N,M,0)=M*(M-1)^{N-1}$</p>
-<p>那么继续递推，当$k=1$的时候，首先题目中有$N-1$对相邻的方块，从中选出一个进行相邻，因此首先方案数乘$C_{n-1}^1$，然后假设选中的是第二个和第三个方块，那么第二个方块和第三个方块可以看成一个方块，因为他们的颜色必须相同，因此经过转换总共就只剩$N-1$个方块，同时还是有0对相邻方块，因此$f(N,M,1)=C_{n-1}^1*f(N-1,M,0)$</p>
-<p>同样的这样递推下去，$f(N,M,i)=C_{n-1}^i*f(N-i,M,0)$</p>
-<p>其中组合数$C_{n-1}^i$用递推的方式进行存储，$C_{n-1}^i=C_{n-1}^{i-1}*(n-i)/i$</p>
-<p>但是因为这是取模运算，所以要用到<strong>费马小定理</strong>，</p>
-<p>也就是当$mod$为质数的时候，$(1/i)\%mod=i^{mod-2}\%mod$</p>
-<h2 id="实现代码"><a href="#实现代码" class="headerlink" title="实现代码"></a>实现代码</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">define</span> _CRT_SECURE_NO_WARNINGS</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> <span class="keyword">int</span> ll;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> ll mod = <span class="number">998244353</span>;</span><br><span class="line">ll n, m, k, c[<span class="number">200005</span>]; <span class="comment">//n,m,k如题意，c存储组合数</span></span><br><span class="line"></span><br><span class="line"><span class="function">ll <span class="title">fp</span><span class="params">(ll x, ll y)</span>   <span class="comment">//实现的是pow(x,y)，然后进行取模运算</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    ll ret = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span> (y)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (y &amp; <span class="number">1</span>) ret = ret * x % mod;</span><br><span class="line">        x = x * x % mod;</span><br><span class="line">        y &gt;&gt;= <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> ret;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%lld%lld%lld"</span>, &amp;n, &amp;m, &amp;k);</span><br><span class="line">    c[<span class="number">0</span>] = <span class="number">1</span>; ll ans = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n - <span class="number">1</span>; i++) c[i] = c[i - <span class="number">1</span>] * (n - i) % mod * fp(i, mod - <span class="number">2</span>) % mod;  <span class="comment">//对组合数进行递推</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt;= k; i++)</span><br><span class="line">        ans = (ans + m * fp(m - <span class="number">1</span>, n - i - <span class="number">1</span>) % mod * c[n - i - <span class="number">1</span>] % mod) % mod;  <span class="comment">//对答案进行递推</span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%lld"</span>, ans);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="复杂度分析"><a href="#复杂度分析" class="headerlink" title="复杂度分析"></a>复杂度分析</h2><blockquote>
-<p>时间复杂度：整个过程中进行了两个遍历，同时还有在pow过程中的遍历，因此事件复杂度$O(nlogn)$</p>
-<p>空间复杂度：$O(n)$用到的排列组合空间相当于是$n$值，虽然解答里面赋给了定值，但是实际上应该要大于等于n</p>
-</blockquote>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1495,14 +1490,14 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">31</span>
+          <span class="site-state-item-count">32</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-count">2</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
   </nav>

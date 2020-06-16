@@ -161,6 +161,133 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/14/%E6%AF%8F%E5%A4%A9%E4%B8%80%E9%81%93%E7%AE%97%E6%B3%95%E9%A2%98/0012ColorfulBlocks/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Leading Werido">
+      <meta itemprop="description" content="笔记记录">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Something">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/05/14/%E6%AF%8F%E5%A4%A9%E4%B8%80%E9%81%93%E7%AE%97%E6%B3%95%E9%A2%98/0012ColorfulBlocks/" class="post-title-link" itemprop="url">0012 ColorfulBlocks</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-05-14 11:03:00" itemprop="dateCreated datePublished" datetime="2020-05-14T11:03:00+08:00">2020-05-14</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-06-09 00:17:10" itemprop="dateModified" datetime="2020-06-09T00:17:10+08:00">2020-06-09</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%AF%8F%E5%A4%A9%E4%B8%80%E9%81%93%E7%AE%97%E6%B3%95%E9%A2%98/" itemprop="url" rel="index"><span itemprop="name">每天一道算法题</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/2020/05/14/%E6%AF%8F%E5%A4%A9%E4%B8%80%E9%81%93%E7%AE%97%E6%B3%95%E9%A2%98/0012ColorfulBlocks/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/05/14/每天一道算法题/0012ColorfulBlocks/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>1.5k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <font size = 8>Colorful Blocks</font>
+
+<blockquote>
+<p>编号：0012</p>
+<p>试题来源：<a href="https://atcoder.jp/contests/abc167/tasks/abc167_e" target="_blank" rel="noopener">AtCoder</a></p>
+</blockquote>
+<p>[TOC]</p>
+<h1 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h1><p>有$N$个连续排列成一行的方块，对他们进行涂色。总共有$M$种可以使用的颜色，不要求一定使用所有的颜色，最多有$K$对相邻的方块有相同的颜色(<strong>例如：涂色为11233，这里面有2对相邻的方块有相同的颜色</strong>)</p>
+<blockquote>
+<p>输入： N   M    K</p>
+<p>输出：可能的次数mod(998244353)</p>
+</blockquote>
+<h1 id="解答算法"><a href="#解答算法" class="headerlink" title="解答算法"></a>解答算法</h1><h2 id="算法思路"><a href="#算法思路" class="headerlink" title="算法思路"></a>算法思路</h2><p>进行遍历判断，题目要求最多有$K$对相邻的方块有相同的颜色，定义$f(N,M,k)$为<strong>有$k$对相邻的方块有相邻的颜色对应的方案数目</strong>，这样题目要求的方案数目就是</p>
+<script type="math/tex; mode=display">
+\sum_{k=0}^{K}f(N,M,k)</script><p>那么接下来就只要思考一下$f(N,M,k)$的求解方式。</p>
+<p>首先思考，当$k=0$的时候，第一个方块可以放$M$种颜色，第二个方块为了和第一个不同，可以放$M-1$种颜色，同样的第三个为了和第二个方块不同，也可以放$M-1$种颜色，以此类推，后面的每一个方块都可以放$M-1$种颜色，因此$f(N,M,0)=M*(M-1)^{N-1}$</p>
+<p>那么继续递推，当$k=1$的时候，首先题目中有$N-1$对相邻的方块，从中选出一个进行相邻，因此首先方案数乘$C_{n-1}^1$，然后假设选中的是第二个和第三个方块，那么第二个方块和第三个方块可以看成一个方块，因为他们的颜色必须相同，因此经过转换总共就只剩$N-1$个方块，同时还是有0对相邻方块，因此$f(N,M,1)=C_{n-1}^1*f(N-1,M,0)$</p>
+<p>同样的这样递推下去，$f(N,M,i)=C_{n-1}^i*f(N-i,M,0)$</p>
+<p>其中组合数$C_{n-1}^i$用递推的方式进行存储，$C_{n-1}^i=C_{n-1}^{i-1}*(n-i)/i$</p>
+<p>但是因为这是取模运算，所以要用到<strong>费马小定理</strong>，</p>
+<p>也就是当$mod$为质数的时候，$(1/i)\%mod=i^{mod-2}\%mod$</p>
+<h2 id="实现代码"><a href="#实现代码" class="headerlink" title="实现代码"></a>实现代码</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">define</span> _CRT_SECURE_NO_WARNINGS</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> <span class="keyword">int</span> ll;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> ll mod = <span class="number">998244353</span>;</span><br><span class="line">ll n, m, k, c[<span class="number">200005</span>]; <span class="comment">//n,m,k如题意，c存储组合数</span></span><br><span class="line"></span><br><span class="line"><span class="function">ll <span class="title">fp</span><span class="params">(ll x, ll y)</span>   <span class="comment">//实现的是pow(x,y)，然后进行取模运算</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    ll ret = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span> (y)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (y &amp; <span class="number">1</span>) ret = ret * x % mod;</span><br><span class="line">        x = x * x % mod;</span><br><span class="line">        y &gt;&gt;= <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> ret;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%lld%lld%lld"</span>, &amp;n, &amp;m, &amp;k);</span><br><span class="line">    c[<span class="number">0</span>] = <span class="number">1</span>; ll ans = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n - <span class="number">1</span>; i++) c[i] = c[i - <span class="number">1</span>] * (n - i) % mod * fp(i, mod - <span class="number">2</span>) % mod;  <span class="comment">//对组合数进行递推</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt;= k; i++)</span><br><span class="line">        ans = (ans + m * fp(m - <span class="number">1</span>, n - i - <span class="number">1</span>) % mod * c[n - i - <span class="number">1</span>] % mod) % mod;  <span class="comment">//对答案进行递推</span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%lld"</span>, ans);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="复杂度分析"><a href="#复杂度分析" class="headerlink" title="复杂度分析"></a>复杂度分析</h2><blockquote>
+<p>时间复杂度：整个过程中进行了两个遍历，同时还有在pow过程中的遍历，因此事件复杂度$O(nlogn)$</p>
+<p>空间复杂度：$O(n)$用到的排列组合空间相当于是$n$值，虽然解答里面赋给了定值，但是实际上应该要大于等于n</p>
+</blockquote>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/11/%E6%AF%8F%E5%A4%A9%E4%B8%80%E9%81%93%E7%AE%97%E6%B3%95%E9%A2%98/0011SkillUp/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1458,164 +1585,6 @@ f(i)=max\{f(i-1)+nums[i],nums[i]\}</script><p>有因为显然$f(0)=nums[0]$，�
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/03/%E6%AF%8F%E5%A4%A9%E4%B8%80%E9%81%93%E7%AE%97%E6%B3%95%E9%A2%98/0002%20%E5%90%88%E5%B9%B6%E4%B8%A4%E4%B8%AA%E6%9C%89%E5%BA%8F%E9%93%BE%E8%A1%A8/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Leading Werido">
-      <meta itemprop="description" content="笔记记录">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Something">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/05/03/%E6%AF%8F%E5%A4%A9%E4%B8%80%E9%81%93%E7%AE%97%E6%B3%95%E9%A2%98/0002%20%E5%90%88%E5%B9%B6%E4%B8%A4%E4%B8%AA%E6%9C%89%E5%BA%8F%E9%93%BE%E8%A1%A8/" class="post-title-link" itemprop="url">0002合并两个有序链表</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-05-03 17:04:00" itemprop="dateCreated datePublished" datetime="2020-05-03T17:04:00+08:00">2020-05-03</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-06-09 00:17:10" itemprop="dateModified" datetime="2020-06-09T00:17:10+08:00">2020-06-09</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%AF%8F%E5%A4%A9%E4%B8%80%E9%81%93%E7%AE%97%E6%B3%95%E9%A2%98/" itemprop="url" rel="index"><span itemprop="name">每天一道算法题</span></a>
-                </span>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus：</span>
-    
-    <a title="disqus" href="/2020/05/03/%E6%AF%8F%E5%A4%A9%E4%B8%80%E9%81%93%E7%AE%97%E6%B3%95%E9%A2%98/0002%20%E5%90%88%E5%B9%B6%E4%B8%A4%E4%B8%AA%E6%9C%89%E5%BA%8F%E9%93%BE%E8%A1%A8/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/05/03/每天一道算法题/0002 合并两个有序链表/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>2.9k</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>3 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="https-zhuanlan-zhihu-com-p-137706259"><a href="#https-zhuanlan-zhihu-com-p-137706259" class="headerlink" title="! https://zhuanlan.zhihu.com/p/137706259"></a>! <a href="https://zhuanlan.zhihu.com/p/137706259" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/137706259</a></h1><font size = 8>合并两个有序链表</font>
-
-<blockquote>
-<p>每天一道算法题</p>
-<p>编号：0002</p>
-<p>本文使用的编程语言<code>c++</code>，算法题来源<a href="https://leetcode-cn.com/problems/merge-two-sorted-lists/" target="_blank" rel="noopener">leetcode</a></p>
-</blockquote>
-<p>[TOC]</p>
-<h1 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h1><p>将两个<strong>升序链表</strong>合并成一个新的升序链表并返回。新链表是通过<strong>拼接</strong>给定的两个链表的所有节点组成的。</p>
-<p>链表的数据结构</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">ListNode</span> &#123;</span></span><br><span class="line">    <span class="keyword">int</span> val;</span><br><span class="line">	ListNode *next;</span><br><span class="line">    ListNode(<span class="keyword">int</span> x) : val(x), next(<span class="literal">NULL</span>) &#123;&#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<h1 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h1><p>输入: 1-&gt;2-&gt;4，1-&gt;3-&gt;4</p>
-<p>输出：1-&gt;1-&gt;2-&gt;3-&gt;4-&gt;4</p>
-<h1 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h1><h2 id="我自己写的"><a href="#我自己写的" class="headerlink" title="我自己写的"></a>我自己写的</h2><p>先选定<code>l1,l2</code>其中的一个作为头结点，我选取的是比较小的那个作为头结点，设置<code>p1,p2</code>两个指针分别指向两个链表<code>l1,l2</code>的头结点，然后进行比较，如果<code>p1-&gt;val &gt; p2-&gt;val</code>，那么就说明这个<code>p2</code>结点要插入到<code>p1</code>与其上一个结点中间，保证插入的节点恰小于<code>p1</code>，大于<code>p1</code>的上一个节点；如果<code>p1-&gt;val &lt;= p2-&gt;val</code>，那么此时不是合适的<code>p2</code>插入的时间，因此让<code>p1</code>向下遍历，这里面<code>p1</code>产生的是最后返回的链表，定义一个<code>head</code>存储其头结点。</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	<span class="function">ListNode* <span class="title">mergeTwoLists</span><span class="params">(ListNode* l1, ListNode* l2)</span> </span>&#123;</span><br><span class="line">		ListNode* p1, * p2, * lastP1, * temp, *head; <span class="comment">//p1,p2分别用来遍历两链表</span></span><br><span class="line">        											 <span class="comment">//lastP1存储p1的上一个节点</span></span><br><span class="line">        											 <span class="comment">//temp用于插入结点的时候的临时节点</span></span><br><span class="line">        											 <span class="comment">//head存储产生链表的头节点</span></span><br><span class="line">        <span class="keyword">if</span> (l1 == <span class="literal">NULL</span>)      <span class="comment">//当其中一个节点为空的时候，合并结果显然是另一个链表</span></span><br><span class="line">			<span class="keyword">return</span> l2;</span><br><span class="line">        <span class="keyword">if</span>(l2 == <span class="literal">NULL</span>)</span><br><span class="line">            <span class="keyword">return</span> l1;</span><br><span class="line">		<span class="keyword">if</span> (l1-&gt;val &lt; l2-&gt;val)  <span class="comment">//选取头结点较小作为p1</span></span><br><span class="line">		&#123;</span><br><span class="line">			p1 = l1;</span><br><span class="line">			p2 = l2;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span></span><br><span class="line">		&#123;</span><br><span class="line">			p1 = l2;</span><br><span class="line">			p2 = l1;</span><br><span class="line">		&#125;</span><br><span class="line">		head = p1;              <span class="comment">//p1就是最后生成的链表，将头结点赋值</span></span><br><span class="line">		lastP1 = p1;</span><br><span class="line">		p1 = p1-&gt;next;</span><br><span class="line">		<span class="keyword">while</span> (<span class="literal">true</span>)           <span class="comment">//循环遍历</span></span><br><span class="line">		&#123;</span><br><span class="line">            <span class="keyword">if</span> (p2 == <span class="literal">NULL</span>)    <span class="comment">//当p2遍历到最后，说明p2中所有节点都已经插入在p1所在的链表中了</span></span><br><span class="line">				<span class="keyword">break</span>;</span><br><span class="line">			<span class="keyword">if</span> (p1 == <span class="literal">NULL</span>)    <span class="comment">//当p1遍历到最后，说明p2剩下的都比p1最大的还大，把p2剩下的全部插入p1就好</span></span><br><span class="line">			&#123;</span><br><span class="line">				lastP1-&gt;next = p2;</span><br><span class="line">				<span class="comment">//p2-&gt;next = p1;</span></span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="comment">//lastP1 = p1;</span></span><br><span class="line">			<span class="keyword">if</span> (p2-&gt;val &gt; p1-&gt;val)   <span class="comment">//当p2大于p1，继续遍历p1</span></span><br><span class="line">			&#123;</span><br><span class="line">				lastP1 = p1;</span><br><span class="line">				p1 = p1-&gt;next;</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">else</span>                    <span class="comment">//当p2不大于p1，把p2插入到p1和其上一个节点之间</span></span><br><span class="line">			&#123;</span><br><span class="line">				temp = p2-&gt;next;</span><br><span class="line">				lastP1-&gt;next = p2;</span><br><span class="line">				p2-&gt;next = p1;</span><br><span class="line">				lastP1 = lastP1-&gt;next;</span><br><span class="line">				p2 = temp;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">return</span> head; </span><br><span class="line">	&#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<p>提交结果:</p>
-<blockquote>
-<p>执行用时:12ms    击败42.83%</p>
-<p>内存消耗:7.1MB   击败100%</p>
-</blockquote>
-<p>复杂度分析</p>
-<blockquote>
-<p>因为最坏情况下把两个链表全部遍历，时间复杂度$O(n)$</p>
-<p>申请了常数个变量，空间复杂度$O(1)$</p>
-</blockquote>
-<h2 id="收集的解法"><a href="#收集的解法" class="headerlink" title="收集的解法"></a>收集的解法</h2><p>一共有二种解法，分别为<strong>迭代，递归</strong></p>
-<p>我用的方法就是<strong>迭代</strong>，官方解答也太简洁好看了吧。</p>
-<h3 id="迭代解法"><a href="#迭代解法" class="headerlink" title="迭代解法"></a>迭代解法</h3><p><a href="https://leetcode-cn.com/problems/merge-two-sorted-lists/solution/he-bing-liang-ge-you-xu-lian-biao-by-leetcode-solu/" target="_blank" rel="noopener">官方解答转送门，还有视频讲解</a></p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">ListNode* <span class="title">mergeTwoLists</span><span class="params">(ListNode* l1, ListNode* l2)</span> </span>&#123;</span><br><span class="line">        ListNode* preHead = <span class="keyword">new</span> ListNode(<span class="number">-1</span>); <span class="comment">//声明一个头结点，赋初值为-1，这个值没啥用</span></span><br><span class="line"></span><br><span class="line">        ListNode* prev = preHead;             <span class="comment">//上一个节点，方便插入</span></span><br><span class="line">        <span class="keyword">while</span> (l1 != <span class="literal">nullptr</span> &amp;&amp; l2 != <span class="literal">nullptr</span>) &#123;</span><br><span class="line">            <span class="keyword">if</span> (l1-&gt;val &lt; l2-&gt;val) &#123;    <span class="comment">//l1和l2的插入没有什么不同(我的解法麻烦在这里)</span></span><br><span class="line">                prev-&gt;next = l1;</span><br><span class="line">                l1 = l1-&gt;next;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                prev-&gt;next = l2;</span><br><span class="line">                l2 = l2-&gt;next;</span><br><span class="line">            &#125;</span><br><span class="line">            prev = prev-&gt;next;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 合并后 l1 和 l2 最多只有一个还未被合并完，我们直接将链表末尾指向未合并完的链表即可</span></span><br><span class="line">        prev-&gt;next = l1 == <span class="literal">nullptr</span> ? l2 : l1;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> preHead-&gt;next;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<p>提交结果</p>
-<blockquote>
-<p>执行用时:12ms    击败42.83%</p>
-<p>内存消耗：7.1MB     击败100%</p>
-</blockquote>
-<p>复杂度分析</p>
-<blockquote>
-<p>与我的相同，事件复杂度$O(m+n)$</p>
-<p>空间复杂度$O(1)$</p>
-</blockquote>
-<h3 id="递归解法"><a href="#递归解法" class="headerlink" title="递归解法"></a>递归解法</h3><p>递推方程</p>
-<script type="math/tex; mode=display">
-\begin{cases}
-list1[0] + merge(list[1:],list2)&      list[0] < list2[0]\\
-list2[0] + merge(list1,list2[1:])&      otherwise
-\end{cases}</script><p>然后就可以递归的进行求解，但是要判断空链表的情况。如果其中的一个是空链表，那么就返回另一个非空链表就好</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">ListNode* <span class="title">mergeTwoLists</span><span class="params">(ListNode* l1, ListNode* l2)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (l1 == <span class="literal">nullptr</span>) &#123;      <span class="comment">//判断哪一个为空，返回了另一个</span></span><br><span class="line">            <span class="keyword">return</span> l2;</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (l2 == <span class="literal">nullptr</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> l1;</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (l1-&gt;val &lt; l2-&gt;val) &#123;      <span class="comment">//根据不同的情况，写出两种不同的递归调用</span></span><br><span class="line">            l1-&gt;next = mergeTwoLists(l1-&gt;next, l2);</span><br><span class="line">            <span class="keyword">return</span> l1;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            l2-&gt;next = mergeTwoLists(l1, l2-&gt;next);</span><br><span class="line">            <span class="keyword">return</span> l2;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<p>这个解答真的好简洁</p>
-<p>提交结果</p>
-<blockquote>
-<p>执行时间   8ms   击败了80.33%</p>
-<p>内存消耗  7MB   击败了100%</p>
-</blockquote>
-<p>复杂度分析</p>
-<blockquote>
-<p>因为也进行了m+n次比较，因此事件复杂度也应该为$O(m+n)$</p>
-<p>在整个过程中没有声明新的变量，所以空间复杂度为$O(1)$</p>
-</blockquote>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1685,14 +1654,14 @@ list2[0] + merge(list1,list2[1:])&      otherwise
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">31</span>
+          <span class="site-state-item-count">32</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-count">2</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
   </nav>
