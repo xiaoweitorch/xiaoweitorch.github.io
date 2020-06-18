@@ -161,6 +161,146 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/06/04/%E6%AF%8F%E5%A4%A9%E4%B8%80%E9%81%93%E7%AE%97%E6%B3%95%E9%A2%98/0024DivGame/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Leading Werido">
+      <meta itemprop="description" content="笔记记录">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Something">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/06/04/%E6%AF%8F%E5%A4%A9%E4%B8%80%E9%81%93%E7%AE%97%E6%B3%95%E9%A2%98/0024DivGame/" class="post-title-link" itemprop="url">0024 DivGame</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-06-04 14:57:00" itemprop="dateCreated datePublished" datetime="2020-06-04T14:57:00+08:00">2020-06-04</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-06-09 00:17:10" itemprop="dateModified" datetime="2020-06-09T00:17:10+08:00">2020-06-09</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%AF%8F%E5%A4%A9%E4%B8%80%E9%81%93%E7%AE%97%E6%B3%95%E9%A2%98/" itemprop="url" rel="index"><span itemprop="name">每天一道算法题</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/2020/06/04/%E6%AF%8F%E5%A4%A9%E4%B8%80%E9%81%93%E7%AE%97%E6%B3%95%E9%A2%98/0024DivGame/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/06/04/每天一道算法题/0024DivGame/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>2.7k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>2 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <font size =8>Div Game</font>
+
+<blockquote>
+<p>编号：0024</p>
+<p>试题来源：<a href="https://atcoder.jp/contests/abc169/tasks/abc169_d" target="_blank" rel="noopener">AtCoder</a></p>
+</blockquote>
+<h1 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h1><p>给定一个正整数$N$，思考对$N$进行下面重复的操作</p>
+<ul>
+<li>首先，选定一个正整数$z$满足下面所有的要求：<ul>
+<li>$z$能够被表示为$z=p^e$，这里面的$p$是质数，$e$是正整数</li>
+<li>$N\%z ==0$</li>
+<li>$z$和先前选择的整数不同</li>
+</ul>
+</li>
+<li>然后继续对$N/z$进行上述操作</li>
+</ul>
+<p>找到这个操作能够进行的最大次数</p>
+<blockquote>
+<p>条件</p>
+<ul>
+<li>所有的输入都是整数</li>
+<li>$1\leq N\leq 10^{12}$</li>
+</ul>
+</blockquote>
+<h1 id="输入"><a href="#输入" class="headerlink" title="输入"></a>输入</h1><blockquote>
+<p>N</p>
+</blockquote>
+<h1 id="解答算法"><a href="#解答算法" class="headerlink" title="解答算法"></a>解答算法</h1><h2 id="算法思路"><a href="#算法思路" class="headerlink" title="算法思路"></a>算法思路</h2><p>题目中要求$z = p^e$，而且$p$又是质数，然后$z$还要求是原来数字$N$的一个因数，很显然这道题目相当于质因数分解的题目。</p>
+<p>假设我们已经解决了质因数分解的问题，已经得到了数字$N$分解出的质因数，那么我们会有一个<code>map</code>，对于每个数字$N$的质因数，对应的值是其出现的次数，例如$8$的质因数为(<2,3>)，表明2作为其质因数，出现了3次。</p>
+<p>要想弄清楚操作的次数，对于任意的一个质因数$<i,k>$，最开始，可以选取$i^1$作为$z$，然后可以选取$i^2$，依次增大，一直到$1+2+\dots +j\leq k 且1+2+\dots+j+(j+1)&gt;k$，那么$j$就是对于质因数$<i,k>$所能进行的最多操作次数。要求整体的最多操作次数，只要求$\sum\limits_{map.begin()}^{map.size}j$。</p>
+<p>因此这道题目的关键在于求解质因数。</p>
+<p>求解质因数可以采用递归的思路进行处理。首先设置工具函数<code>is_prime</code>来检验数$i$是否为质数。然后对于一个数$n$，求解其质因数，从2开始进行遍历，遍历到$n$为止，判断其中是否存在一个数$i$是质数，同时满足$n\%i==0$。找到这样的数，循环终止。对$n/i$调用上述过程。如果$n/i$是质数，递归终止。</p>
+<h2 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;unordered_map&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> ull = <span class="keyword">unsigned</span> <span class="keyword">long</span> <span class="keyword">long</span>;</span><br><span class="line"><span class="keyword">using</span> ll = <span class="keyword">long</span> <span class="keyword">long</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">template</span>&lt;<span class="class"><span class="keyword">class</span> <span class="title">T</span>&gt;           //自定义读入函数</span></span><br><span class="line"><span class="class"><span class="title">inline</span> <span class="title">void</span> <span class="title">read</span>(<span class="title">T</span> &amp;<span class="title">a</span>) &#123;</span></span><br><span class="line">    <span class="keyword">register</span> T x = <span class="number">0</span>, flag = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">register</span> <span class="keyword">char</span> ch;</span><br><span class="line">    <span class="keyword">while</span> (!<span class="built_in">isdigit</span>(ch = getchar())) <span class="keyword">if</span> (ch == <span class="string">'-'</span>) flag = <span class="number">-1</span>;</span><br><span class="line">    <span class="keyword">while</span> (x = x * <span class="number">10</span> + (ch &amp; <span class="number">15</span>), <span class="built_in">isdigit</span>(ch = getchar()));</span><br><span class="line">    a = x * flag;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">template</span> &lt;<span class="class"><span class="keyword">class</span> <span class="title">T</span>&gt;        //自定义写入函数</span></span><br><span class="line"><span class="class"><span class="title">inline</span> <span class="title">void</span> <span class="title">write</span>(<span class="title">T</span> <span class="title">x</span>) &#123;</span></span><br><span class="line">    <span class="keyword">if</span> (x &lt; <span class="number">0</span>)</span><br><span class="line">        <span class="built_in">putchar</span>(<span class="string">'-'</span>), x = -x;</span><br><span class="line">    <span class="keyword">if</span>(x &gt;= <span class="number">10</span>) write(x / <span class="number">10</span>); </span><br><span class="line">    <span class="built_in">putchar</span>(x % <span class="number">10</span> + <span class="string">'0'</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">template</span>&lt;class T&gt; <span class="keyword">inline</span> <span class="keyword">bool</span> <span class="title">Chkmax</span><span class="params">(T&amp; x, <span class="keyword">const</span> T&amp; y)</span> </span>&#123; <span class="keyword">return</span> x &lt; y ? x = y, <span class="literal">true</span> : <span class="literal">false</span>; &#125;   <span class="comment">//自定义比较函数</span></span><br><span class="line"><span class="function"><span class="keyword">template</span>&lt;class T&gt; <span class="keyword">inline</span> <span class="keyword">bool</span> <span class="title">Chkmin</span><span class="params">(T&amp; x, <span class="keyword">const</span> T&amp; y)</span> </span>&#123; <span class="keyword">return</span> x &gt; y ? x = y, <span class="literal">true</span> : <span class="literal">false</span>; &#125;   <span class="comment">//自定义比较函数</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> For(i, a, b) for (int i = (a); i &lt;= (b); ++i)   <span class="comment">//从小到大重复</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> Rep(i, a, b) for (int i = (a); i &gt;= (b); --i)   <span class="comment">//从大到小重复</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> For_edge(x) for (int i = head[x]; i; i = net[i])</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> mem0(a) memset(a, 0, sizeof a)                  <span class="comment">//内存复制</span></span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//判断是否是质数</span></span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">is_prime</span><span class="params">(ll n)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> sqrtN = (<span class="keyword">int</span>)<span class="built_in">sqrt</span>((<span class="keyword">double</span>)n);   <span class="comment">//注意因为最大为10^12，因此其平方根属于int</span></span><br><span class="line">	<span class="keyword">if</span>(n == <span class="number">1</span>)</span><br><span class="line">		<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">	<span class="keyword">if</span>(n == <span class="number">2</span>)</span><br><span class="line">		<span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">2</span>; i &lt;= sqrtN; ++i)</span><br><span class="line">		<span class="keyword">if</span>(n % i == <span class="number">0</span>)</span><br><span class="line">			<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">	<span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">unordered_map</span>&lt;ll, <span class="keyword">int</span>&gt; m;   <span class="comment">//存储所有的质因数</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">find_all_prime_factor</span><span class="params">(ll n)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(n == <span class="number">1</span>)</span><br><span class="line">		<span class="keyword">return</span>;</span><br><span class="line">	<span class="keyword">if</span>(n == <span class="number">2</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		++m[n];    <span class="comment">//2是质数，对应的值自增</span></span><br><span class="line">		<span class="keyword">return</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span>(is_prime(n))</span><br><span class="line">	&#123;</span><br><span class="line">		++m[n];   <span class="comment">//当n对应的键在map中不存在，新增的初始值为0</span></span><br><span class="line">		<span class="keyword">return</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">int</span> i;</span><br><span class="line">	<span class="keyword">for</span>(i = <span class="number">2</span>; i &lt;= n; ++i)</span><br><span class="line">		<span class="keyword">if</span>(is_prime(i) &amp;&amp; n % i == <span class="number">0</span>)</span><br><span class="line">		&#123;</span><br><span class="line">			++m[i];           <span class="comment">//找到其最小的质因数</span></span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">	find_all_prime_factor(n / i);   <span class="comment">//对新的数应用上述推导</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	ll N;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">"%lld"</span>, &amp;N);</span><br><span class="line">	<span class="keyword">int</span> times = <span class="number">0</span>;</span><br><span class="line">	find_all_prime_factor(N);    <span class="comment">//找到质因数</span></span><br><span class="line">	<span class="keyword">if</span>(m.empty())     <span class="comment">//如果为空，那么显然不会有操作</span></span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; <span class="number">0</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">auto</span> iter = m.begin(); iter != m.end(); ++iter)  <span class="comment">//进行循环</span></span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= iter-&gt;second; ++i)   <span class="comment">//判断i最大是多少</span></span><br><span class="line">			&#123;</span><br><span class="line">				++times;    <span class="comment">//每遍历依次，相当于进行依次操作</span></span><br><span class="line">				iter-&gt;second = iter-&gt;second - i;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; times &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="复杂度分析"><a href="#复杂度分析" class="headerlink" title="复杂度分析"></a>复杂度分析</h2><blockquote>
+<ul>
+<li>时间复杂度：$O(n^2)$</li>
+<li>空间复杂度：$O(n)$</li>
+</ul>
+</blockquote>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/06/04/%E6%AF%8F%E5%A4%A9%E4%B8%80%E9%81%93%E7%AE%97%E6%B3%95%E9%A2%98/0023Multiplication2/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1289,136 +1429,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/17/%E6%AF%8F%E5%A4%A9%E4%B8%80%E9%81%93%E7%AE%97%E6%B3%95%E9%A2%98/0014%E6%95%B0%E4%BD%8D%E6%88%90%E6%9C%AC%E5%92%8C%E4%B8%BA%E7%9B%AE%E6%A0%87%E5%80%BC%E7%9A%84%E6%9C%80%E5%A4%A7%E6%95%B0%E5%AD%97/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Leading Werido">
-      <meta itemprop="description" content="笔记记录">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Something">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/05/17/%E6%AF%8F%E5%A4%A9%E4%B8%80%E9%81%93%E7%AE%97%E6%B3%95%E9%A2%98/0014%E6%95%B0%E4%BD%8D%E6%88%90%E6%9C%AC%E5%92%8C%E4%B8%BA%E7%9B%AE%E6%A0%87%E5%80%BC%E7%9A%84%E6%9C%80%E5%A4%A7%E6%95%B0%E5%AD%97/" class="post-title-link" itemprop="url">0014数位成本和为目标值的最大数字</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-05-17 15:43:00" itemprop="dateCreated datePublished" datetime="2020-05-17T15:43:00+08:00">2020-05-17</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-06-09 00:17:10" itemprop="dateModified" datetime="2020-06-09T00:17:10+08:00">2020-06-09</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%AF%8F%E5%A4%A9%E4%B8%80%E9%81%93%E7%AE%97%E6%B3%95%E9%A2%98/" itemprop="url" rel="index"><span itemprop="name">每天一道算法题</span></a>
-                </span>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus：</span>
-    
-    <a title="disqus" href="/2020/05/17/%E6%AF%8F%E5%A4%A9%E4%B8%80%E9%81%93%E7%AE%97%E6%B3%95%E9%A2%98/0014%E6%95%B0%E4%BD%8D%E6%88%90%E6%9C%AC%E5%92%8C%E4%B8%BA%E7%9B%AE%E6%A0%87%E5%80%BC%E7%9A%84%E6%9C%80%E5%A4%A7%E6%95%B0%E5%AD%97/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/05/17/每天一道算法题/0014数位成本和为目标值的最大数字/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>1.8k</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>2 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <font size = 8>数位成本和为目标值的最大数字</font>
-
-<blockquote>
-<p>编号：0014</p>
-<p>试题来源：<a href="https://leetcode-cn.com/problems/form-largest-integer-with-digits-that-add-up-to-target/" target="_blank" rel="noopener">leetcode</a></p>
-</blockquote>
-<p>[TOC]</p>
-<h1 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h1><p>给定整数数组<code>cost</code>和一个整数<code>target</code>。返回满足如下规则的可以得到的<strong>最大整数</strong>：</p>
-<ul>
-<li>给当前结果添加一个数位<code>i+1</code>的成本为<code>cost[i]</code>(<code>cost</code>数组的下标从0开始)</li>
-<li>总成本必须<strong>恰好</strong>等于<code>target</code></li>
-<li>添加的位数中没有数字0</li>
-</ul>
-<p>返回类型<code>string</code></p>
-<p>如果无法得到任何整数，那么返回<code>0</code>。</p>
-<h1 id="解答算法"><a href="#解答算法" class="headerlink" title="解答算法"></a>解答算法</h1><h2 id="算法思路"><a href="#算法思路" class="headerlink" title="算法思路"></a>算法思路</h2><p>很显然这是一个<em>0-1完全背包问题</em>。</p>
-<p>我用的是暴力做法，时间复杂度太高，失败了</p>
-<p><a href="https://leetcode-cn.com/problems/form-largest-integer-with-digits-that-add-up-to-target/comments/400223" target="_blank" rel="noopener">参考代码</a></p>
-<p><code>target</code>是目标的花费，显然，<code>cost</code>数组中的每一个值都是正数，因为一旦存在<code>0</code>，那么可以无穷添加，就没有最大值了。所以$cost[i]\geq 1$。因此可以设置一个temp数组，其中元素是<code>string</code>类型，<code>temp[i]</code>存储当总花费为<code>i</code>的时候产生的最大<code>string</code>。</p>
-<p>显然有如下递推公式</p>
-<p><code>temp[target] = max{temp[target - cost[i]]+cost[i],cost[i] + temp[target - cost[i]]}</code>，如果$target - cost[i] == 0$说明这是第一个添加的元素。如果$target - cost[i] &lt; 0$说明，该<code>target</code>没有满足条件的<code>string</code>；如果<code>temp[target - cost[i]]</code>对应的<code>string</code>为空，说明它不存在，那么自然不能在一个不存在的字符串上加数位因此也不存在。</p>
-<p>通过递推公式，一个个遍历<code>temp[i]</code>，最后就能够解决问题</p>
-<h2 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="built_in">string</span> <span class="title">largestNumber</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; cost, <span class="keyword">int</span> target)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> len = cost.size();</span><br><span class="line">        <span class="built_in">unordered_map</span>&lt;<span class="keyword">int</span>, <span class="keyword">int</span>&gt; cost2num;  <span class="comment">//key存放的是花费，对应得是下标</span></span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; len; i++) &#123;   <span class="comment">//更新花费map</span></span><br><span class="line">            <span class="keyword">if</span>(cost2num.find(cost[i]) == cost2num.end() || cost2num[cost[i]] &lt; i + <span class="number">1</span>) &#123;</span><br><span class="line">                cost2num[cost[i]] = i + <span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;   </span><br><span class="line">        <span class="function"><span class="built_in">vector</span>&lt;<span class="built_in">string</span>&gt; <span class="title">temp</span><span class="params">(target + <span class="number">1</span>, <span class="string">""</span>)</span></span>;  <span class="comment">//vector数组得长度为target+1,初始值均为空字符串</span></span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= target; i++) &#123;  <span class="comment">//从1开始，逐渐提升target的值</span></span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">const</span> <span class="keyword">auto</span>&amp; [cost, num]: cost2num) &#123;</span><br><span class="line">                <span class="keyword">int</span> index = i - cost;       <span class="comment">//如果添加了当前数位，是在temp[i-cost]的基础上添加的</span></span><br><span class="line">                <span class="keyword">if</span>(index == <span class="number">0</span> || index &gt; <span class="number">0</span> &amp;&amp; temp[index] != <span class="string">""</span>) &#123; <span class="comment">//如果index == 0说明当前添加的i是第一个数位;如果index&gt;0，那么需要temp[i-cost]有合适的取值，才能添加新的数位</span></span><br><span class="line">                    <span class="built_in">string</span> second = to_string(num);</span><br><span class="line">                    <span class="built_in">string</span> new_str = temp[index] &gt; second? temp[index] + second: second + temp[index];  <span class="comment">//产生添加数位之后的string</span></span><br><span class="line">                    <span class="keyword">if</span>(new_str.size() &gt; temp[i].size() || new_str.size() == temp[i].size() &amp;&amp; new_str &gt; temp[i]) &#123;  <span class="comment">//和当前temp[i]进行对比，谁大选谁</span></span><br><span class="line">                        temp[i] = new_str;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> temp[target] == <span class="string">""</span>? <span class="string">"0"</span>: temp[target];  <span class="comment">//非空返回string，否则返回0</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<h2 id="复杂度分析"><a href="#复杂度分析" class="headerlink" title="复杂度分析"></a>复杂度分析</h2><blockquote>
-<ul>
-<li>时间复杂度：整个过程中遍历了$O(target)$的时间，同时每一次都进行了比较操作以及对9个可以添加的数位的比较，最终的时间复杂度为$O(n)$</li>
-<li>空间复杂度：申请了$O(target)$的额外空间，时间复杂度为$O(n)$</li>
-</ul>
-</blockquote>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1488,7 +1498,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">33</span>
+          <span class="site-state-item-count">34</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
