@@ -161,6 +161,140 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/04/%E6%AF%8F%E5%A4%A9%E4%B8%80%E9%81%93%E7%AE%97%E6%B3%95%E9%A2%98/0005%20%E8%B7%B3%E8%B7%83%E6%B8%B8%E6%88%8F%E2%85%A1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Leading Werido">
+      <meta itemprop="description" content="笔记记录">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Something">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/05/04/%E6%AF%8F%E5%A4%A9%E4%B8%80%E9%81%93%E7%AE%97%E6%B3%95%E9%A2%98/0005%20%E8%B7%B3%E8%B7%83%E6%B8%B8%E6%88%8F%E2%85%A1/" class="post-title-link" itemprop="url">0005跳跃游戏</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-05-04 15:31:00" itemprop="dateCreated datePublished" datetime="2020-05-04T15:31:00+08:00">2020-05-04</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-06-09 00:17:10" itemprop="dateModified" datetime="2020-06-09T00:17:10+08:00">2020-06-09</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%AF%8F%E5%A4%A9%E4%B8%80%E9%81%93%E7%AE%97%E6%B3%95%E9%A2%98/" itemprop="url" rel="index"><span itemprop="name">每天一道算法题</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/2020/05/04/%E6%AF%8F%E5%A4%A9%E4%B8%80%E9%81%93%E7%AE%97%E6%B3%95%E9%A2%98/0005%20%E8%B7%B3%E8%B7%83%E6%B8%B8%E6%88%8F%E2%85%A1/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/05/04/每天一道算法题/0005 跳跃游戏Ⅱ/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>1.9k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>2 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <font size= 8>跳跃游戏Ⅱ</font>
+
+<blockquote>
+<p>编号：0005</p>
+<p>试题来源：<a href="https://leetcode-cn.com/problems/jump-game-ii/" target="_blank" rel="noopener">leetcode</a></p>
+</blockquote>
+<p>[TOC]</p>
+<h1 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h1><p>给定一个<strong>非负整数数组</strong>，最初位于数组的第一个位置，数组中的每个元素代表你在该位置可以跳跃的<strong>最大长度</strong>。目标是使用最少的跳跃次数到达数组的最后一个位置。输出最少的跳跃次数。</p>
+<blockquote>
+<p>假设你总是可以到达数组的最后一个位置</p>
+</blockquote>
+<h1 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h1><blockquote>
+<p>输入：[2,3,1,1,4]</p>
+<p>输出：2</p>
+<p>解释：从下标为0跳到下标为1，再从下标为1跳至最后一个位置，共两步</p>
+</blockquote>
+<h1 id="解答算法"><a href="#解答算法" class="headerlink" title="解答算法"></a>解答算法</h1><p><a href="https://leetcode-cn.com/problems/jump-game-ii/solution/tiao-yue-you-xi-ii-by-leetcode-solution/" target="_blank" rel="noopener">官方解答传送门</a></p>
+<h2 id="反向查找出发位置"><a href="#反向查找出发位置" class="headerlink" title="反向查找出发位置"></a>反向查找出发位置</h2><h3 id="算法思路"><a href="#算法思路" class="headerlink" title="算法思路"></a>算法思路</h3><p>想要到达最后一个位置，那么可以找到所有可以一步跳至最后一个位置的位置，需要满足<code>nums[i]+i &gt;= nums.size()-1</code>，所有满足这样条件的位置，我们选择<code>i</code>最小的，这样方便其他的位置到达<code>i</code>,这时候<code>i</code>就作为新的<code>target</code>，进行进一步的判断，一直到最后的<code>target == 0</code>，循环终止。</p>
+<h3 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h3><p>我自己写的代码(c++)</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">jump</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> times = <span class="number">0</span>, target = nums.size() - <span class="number">1</span>, tempTarget = target;   <span class="comment">//times是跳跃步数，target是当前要达到的目标位置下标，tempTarget是一个临时的target，最后进行比较决定取不取</span></span><br><span class="line">        <span class="keyword">while</span> (target != <span class="number">0</span>)    <span class="comment">//当target为0的时候，循环终止，逆向搜索达到终点</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">int</span> i;</span><br><span class="line">            times++;          <span class="comment">//每一次进入循环，都是新的一次跳跃，步数+1</span></span><br><span class="line">            <span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; target / <span class="number">2</span> + <span class="number">1</span>; i++)   <span class="comment">//从0开始遍历到满足条件</span></span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">if</span> (i + nums[i] &gt;= target)        <span class="comment">//若从头开始满足条件，那么直接赋给新的target，然后退出循环</span></span><br><span class="line">                &#123;</span><br><span class="line">                    target = i;</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">if</span> (target - i - <span class="number">1</span> + nums[target - i - <span class="number">1</span>] &gt;= target)<span class="comment">//这个相当于从后向前遍历，类似于双指针向中间进发</span></span><br><span class="line">                    tempTarget = target - i - <span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            target = min(target, tempTarget);    <span class="comment">//新的target取较小值</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> times;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>该思路用<code>c++</code>写会超出时间限制，未通过测试。(不是太明白)</p>
+<p>官方解答用<code>java</code>写的</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">jump</span><span class="params">(<span class="keyword">int</span>[] nums)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> position = nums.length - <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">int</span> steps = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span> (position &gt; <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; position; i++) &#123;</span><br><span class="line">                <span class="keyword">if</span> (i + nums[i] &gt;= position) &#123;</span><br><span class="line">                    position = i;</span><br><span class="line">                    steps++;</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> steps;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="复杂度分析"><a href="#复杂度分析" class="headerlink" title="复杂度分析"></a>复杂度分析</h3><blockquote>
+<p>时间复杂度：整个过程中，有两层嵌套遍历，在最坏的情况下，也就是[1,1,1,1,1,1…]这样的情况下，遍历的总次数为$\sum_{i=1}^n(n-i)$，因此$O(n^2)$</p>
+<p>空间复杂度，只申请了常数个变量，没有用栈，因此$O(1)$</p>
+</blockquote>
+<h2 id="正向查找可到达的最大位置"><a href="#正向查找可到达的最大位置" class="headerlink" title="正向查找可到达的最大位置"></a>正向查找可到达的最大位置</h2><h3 id="思路分析"><a href="#思路分析" class="headerlink" title="思路分析"></a>思路分析</h3><p>从左向右遍历数组，找到其能够到达的最大边界，例如最开始查找a[0]，将边界值<code>end</code>更新为<code>a[0]</code>所能到达的最远点，也就是<code>a[0]+0</code>，然后在遍历<code>a[1..a[0]+0]</code>的过程中，不断更新其下一步能够到达的最远点<code>maxPos</code>，，然后当到达边界<code>end</code>的时候，说明要进行下一步跳跃，<code>step++</code>，同时更新<code>end</code>为<code>maxPos</code></p>
+<h3 id="代码实现-1"><a href="#代码实现-1" class="headerlink" title="代码实现"></a>代码实现</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">jump</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> maxPos = <span class="number">0</span>, n = nums.size(), end = <span class="number">0</span>, step = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n - <span class="number">1</span>; ++i) &#123;</span><br><span class="line">            <span class="keyword">if</span> (maxPos &gt;= i) &#123;</span><br><span class="line">                maxPos = max(maxPos, i + nums[i]);</span><br><span class="line">                <span class="keyword">if</span> (i == end) &#123;</span><br><span class="line">                    end = maxPos;</span><br><span class="line">                    ++step;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> step;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h3 id="复杂度分析-1"><a href="#复杂度分析-1" class="headerlink" title="复杂度分析"></a>复杂度分析</h3><blockquote>
+<p>时间复杂度：整个过程中，只遍历了一次数组，因此时间复杂度$O(n)$</p>
+<p>空间复杂度：申请了常数个变量$O(1)$</p>
+</blockquote>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/03/%E6%AF%8F%E5%A4%A9%E4%B8%80%E9%81%93%E7%AE%97%E6%B3%95%E9%A2%98/0004%20%E6%97%A0%E9%87%8D%E5%A4%8D%E5%AD%97%E7%AC%A6%E7%9A%84%E6%9C%80%E9%95%BF%E5%AD%90%E4%B8%B2/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -859,14 +993,14 @@ list2[0] + merge(list1,list2[1:])&      otherwise
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">34</span>
+          <span class="site-state-item-count">35</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-count">5</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
   </nav>
