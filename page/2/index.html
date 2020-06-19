@@ -161,6 +161,140 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/06/07/%E6%AF%8F%E5%A4%A9%E4%B8%80%E9%81%93%E7%AE%97%E6%B3%95%E9%A2%98/0026KnapsackForAllSubsets/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Leading Werido">
+      <meta itemprop="description" content="笔记记录">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Something">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/06/07/%E6%AF%8F%E5%A4%A9%E4%B8%80%E9%81%93%E7%AE%97%E6%B3%95%E9%A2%98/0026KnapsackForAllSubsets/" class="post-title-link" itemprop="url">0026 KnapsackForAllSubSets</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-06-07 12:00:00" itemprop="dateCreated datePublished" datetime="2020-06-07T12:00:00+08:00">2020-06-07</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-06-09 00:25:35" itemprop="dateModified" datetime="2020-06-09T00:25:35+08:00">2020-06-09</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%AF%8F%E5%A4%A9%E4%B8%80%E9%81%93%E7%AE%97%E6%B3%95%E9%A2%98/" itemprop="url" rel="index"><span itemprop="name">每天一道算法题</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/2020/06/07/%E6%AF%8F%E5%A4%A9%E4%B8%80%E9%81%93%E7%AE%97%E6%B3%95%E9%A2%98/0026KnapsackForAllSubsets/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/06/07/每天一道算法题/0026KnapsackForAllSubsets/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>1.5k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <font size = 8>Knapsack for All Subsets</font>
+
+<blockquote>
+<p>编号：0026</p>
+<p>试题来源：<a href="https://atcoder.jp/contests/abc169/tasks/abc169_f" target="_blank" rel="noopener">AtCoder</a></p>
+</blockquote>
+<p>[TOC]</p>
+<h1 id="试题描述"><a href="#试题描述" class="headerlink" title="试题描述"></a>试题描述</h1><p>给定有$N$个正整数的一个序列$A_1,\cdots,A_N$，以及一个正整数$S$。</p>
+<p>对于任意一个$\{1,2,\cdots,N\}$的非空子集$T$，定义$f(T)$如下：</p>
+<ul>
+<li>$f(T)$是互不相同的$T$的非空子集$x_1,x_2,\cdots,x_k$满足$A_{x_1}+\cdots+A_{x_k} = S$</li>
+</ul>
+<p>请找出$\{1,2,\cdots,N\}$的所有非空子集$T$的$f(T)$的和，该值模998244353为结果。</p>
+<blockquote>
+<p>限制条件：</p>
+<ul>
+<li>所有的输入是整数</li>
+<li>$1\leq N\leq 3000$</li>
+<li>$1\leq S\leq 3000$</li>
+<li>$1\leq A_i\leq 3000$</li>
+</ul>
+</blockquote>
+<h1 id="输入"><a href="#输入" class="headerlink" title="输入"></a>输入</h1><blockquote>
+<p>N  S</p>
+<p>$A_1$    $\cdots$     $A_N$</p>
+</blockquote>
+<h1 id="解答算法"><a href="#解答算法" class="headerlink" title="解答算法"></a>解答算法</h1><p>首先，假定对于满足$A_{x_1}+A_{x_2}+\cdots + A_{x_k}=S$的这样的子序列，那么显然，包含这个子序列的序列数目就为$2^{N-k}$，因此对于每个序列，其每多包含一个数字，包含这个序列的序列的可能性就会是原来的$\frac{1}{2}$。</p>
+<p>因此我们可以设置一个$dp[s]$，$dp[s]$代表当前满足$A_{x_1}+A_{x_2}+\cdots + A_{x_k}=S$的个数。</p>
+<p>初始的时候有$dp[0]=2^N$，这是显然的。</p>
+<p>然后我们观察递推方程，假设当前读入了数字$x$，那么显然对于任意的$j\geq x$，都有$dp[j] = dp[j] + dp[j-x]/2$，为什么后面的$dp[j-x]$要除以二呢，原因就是你多加了一个数字$x$进入序列，那么其可能数目变为原来的$\frac{1}{2}$。</p>
+<p>这个题目因为用到了求模，所以说在求模中的除法和正常不一样，要用到<strong>费马小定理</strong>，也就是把$(a/2)mod\quad p$转化成$a*2^{mod-2}$</p>
+<p>但是这个题目里面，看厉害的大佬解答，都是<strong>用$(a/2)mod \quad p$转换成了$a*(mod-mod/2)$</strong>,这个数学原理是什么不太了解，但是正确性可以简单的想一下，两个$a*(mod-mod/2)$相加，一定为$1$，因此一个是原来的$\frac{1}{2}$，如果有谁知道原理，希望指点我一下。</p>
+<h2 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> mod=<span class="number">998244353</span>;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N=<span class="number">3005</span>;</span><br><span class="line"><span class="keyword">int</span> n,s;</span><br><span class="line">ll dp[N];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    ll inv2=mod-mod/<span class="number">2</span>;   <span class="comment">//定义的那个除以2的数</span></span><br><span class="line">    dp[<span class="number">0</span>]=<span class="number">1</span>;           <span class="comment">//初始dp[0]=1,和我说的等于2的N次方一个东西，因为他在最后，对结果乘以2的N次方。</span></span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%d%d"</span>,&amp;n,&amp;s);</span><br><span class="line">    ll ans=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">int</span> x;<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;x);</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j=s;j&gt;=x;j--)  <span class="comment">//递推公式</span></span><br><span class="line">            dp[j]=(dp[j]+dp[j-x]*inv2)%mod;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++) dp[s]=dp[s]*<span class="number">2</span>%mod;<span class="comment">//对结果乘以2的N次方，和先对dp[0]进行这个操作是等价的</span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%lld\n"</span>,dp[s]);  <span class="comment">//输出结果</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/06/05/%E6%AF%8F%E5%A4%A9%E4%B8%80%E9%81%93%E7%AE%97%E6%B3%95%E9%A2%98/0025CountMedian/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1322,121 +1456,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/20/%E6%AF%8F%E5%A4%A9%E4%B8%80%E9%81%93%E7%AE%97%E6%B3%95%E9%A2%98/0016%E6%AF%8F%E4%B8%AA%E5%85%83%E9%9F%B3%E5%8C%85%E5%90%AB%E5%81%B6%E6%95%B0%E6%AC%A1%E7%9A%84%E6%9C%80%E9%95%BF%E5%AD%90%E5%AD%97%E7%AC%A6%E4%B8%B2/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Leading Werido">
-      <meta itemprop="description" content="笔记记录">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Something">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/05/20/%E6%AF%8F%E5%A4%A9%E4%B8%80%E9%81%93%E7%AE%97%E6%B3%95%E9%A2%98/0016%E6%AF%8F%E4%B8%AA%E5%85%83%E9%9F%B3%E5%8C%85%E5%90%AB%E5%81%B6%E6%95%B0%E6%AC%A1%E7%9A%84%E6%9C%80%E9%95%BF%E5%AD%90%E5%AD%97%E7%AC%A6%E4%B8%B2/" class="post-title-link" itemprop="url">0016 每个元音包含偶数次的最长子字符串</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-05-20 22:36:00" itemprop="dateCreated datePublished" datetime="2020-05-20T22:36:00+08:00">2020-05-20</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-06-09 00:17:10" itemprop="dateModified" datetime="2020-06-09T00:17:10+08:00">2020-06-09</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%AF%8F%E5%A4%A9%E4%B8%80%E9%81%93%E7%AE%97%E6%B3%95%E9%A2%98/" itemprop="url" rel="index"><span itemprop="name">每天一道算法题</span></a>
-                </span>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus：</span>
-    
-    <a title="disqus" href="/2020/05/20/%E6%AF%8F%E5%A4%A9%E4%B8%80%E9%81%93%E7%AE%97%E6%B3%95%E9%A2%98/0016%E6%AF%8F%E4%B8%AA%E5%85%83%E9%9F%B3%E5%8C%85%E5%90%AB%E5%81%B6%E6%95%B0%E6%AC%A1%E7%9A%84%E6%9C%80%E9%95%BF%E5%AD%90%E5%AD%97%E7%AC%A6%E4%B8%B2/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/05/20/每天一道算法题/0016每个元音包含偶数次的最长子字符串/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>1.1k</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <font size =8>每个元音包含偶数次的最长子字符串</font>
-
-<blockquote>
-<p>编号：0016</p>
-<p>题目来源：<a href="https://leetcode-cn.com/problems/find-the-longest-substring-containing-vowels-in-even-counts/" target="_blank" rel="noopener">leetcode</a></p>
-</blockquote>
-<p>[TOC]</p>
-<h1 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h1><p>给定一个字符串<code>s</code>，返回满足如下条件的最长子字符串的长度：</p>
-<ul>
-<li>每个元音字母，即’a’,’e’,’i’,’o’,’u’，在子字符串中都恰好出现了偶数次</li>
-</ul>
-<h1 id="解答算法"><a href="#解答算法" class="headerlink" title="解答算法"></a>解答算法</h1><p>显然该题目中重要的是当前位置$i$，五个元音字母出现的次数，假设用$r[i][k]$存放位置$i$出现的第$k$个元音字母的次数，那么要求以该位置结尾的满足条件的最长字符串，那么就要找到第一个出现当前奇偶状态的位置，即$r[i][k] - r[j][k]$是偶数，注意，这里的$k$是第一次出现当前奇偶状态的位置。</p>
-<p>在实际操作中，可以利用一个<code>int</code>数，按位存放奇偶状态，因为我们不关心当前位置储出现元音字母的个数，我们只关心当前位置的奇偶性，因此用一位的<code>0</code>或者<code>1</code>来存储奇偶性就可以，这样可以创建一个a[32]数组，这样其中的每一个数都代表一种奇偶状态，这样就可以将其赋值为第一次出现当前状态的位置，然后当再次遇到当前状态，就可以相减的到最长的长度。</p>
-<h1 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h1><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">findTheLongestSubstring</span><span class="params">(<span class="built_in">string</span> s)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> ans = <span class="number">0</span>, status = <span class="number">0</span>, n = s.length();</span><br><span class="line">        <span class="function"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; <span class="title">pos</span><span class="params">(<span class="number">1</span> &lt;&lt; <span class="number">5</span>, <span class="number">-1</span>)</span></span>;   <span class="comment">//一个32位的数组，初始值赋为-1</span></span><br><span class="line">        pos[<span class="number">0</span>] = <span class="number">0</span>;  <span class="comment">//全部都是偶的第一个状态显然是位置0</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; ++i) &#123;</span><br><span class="line">            <span class="keyword">if</span> (s[i] == <span class="string">'a'</span>) &#123;   <span class="comment">//如果遇到'a'，那么反转第一位的奇偶性，下面相同</span></span><br><span class="line">                status ^= <span class="number">1</span> &lt;&lt; <span class="number">0</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span> (s[i] == <span class="string">'e'</span>) &#123;</span><br><span class="line">                status ^= <span class="number">1</span> &lt;&lt; <span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span> (s[i] == <span class="string">'i'</span>) &#123;</span><br><span class="line">                status ^= <span class="number">1</span> &lt;&lt; <span class="number">2</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span> (s[i] == <span class="string">'o'</span>) &#123;</span><br><span class="line">                status ^= <span class="number">1</span> &lt;&lt; <span class="number">3</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span> (s[i] == <span class="string">'u'</span>) &#123;</span><br><span class="line">                status ^= <span class="number">1</span> &lt;&lt; <span class="number">4</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (~pos[status]) &#123;  <span class="comment">//如果当前状态对应的奇偶性出现过，那么判断其长度</span></span><br><span class="line">                ans = max(ans, i + <span class="number">1</span> - pos[status]);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span> &#123;    <span class="comment">//给当前状态赋初值</span></span><br><span class="line">                pos[status] = i + <span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1506,7 +1525,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">35</span>
+          <span class="site-state-item-count">36</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
