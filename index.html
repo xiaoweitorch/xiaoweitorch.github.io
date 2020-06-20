@@ -161,6 +161,268 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/06/20/%E6%AF%8F%E5%A4%A9%E4%B8%80%E9%81%93%E7%AE%97%E6%B3%95%E9%A2%98/0031%E6%A0%91%E8%8A%82%E7%82%B9%E7%9A%84%E7%AC%ACk%E4%B8%AA%E7%A5%96%E5%85%88/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Leading Werido">
+      <meta itemprop="description" content="笔记记录">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Something">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/06/20/%E6%AF%8F%E5%A4%A9%E4%B8%80%E9%81%93%E7%AE%97%E6%B3%95%E9%A2%98/0031%E6%A0%91%E8%8A%82%E7%82%B9%E7%9A%84%E7%AC%ACk%E4%B8%AA%E7%A5%96%E5%85%88/" class="post-title-link" itemprop="url">0031 树节点的第k个祖先</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-06-20 19:19:00 / 修改时间：19:20:07" itemprop="dateCreated datePublished" datetime="2020-06-20T19:19:00+08:00">2020-06-20</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%AF%8F%E5%A4%A9%E4%B8%80%E9%81%93%E7%AE%97%E6%B3%95%E9%A2%98/" itemprop="url" rel="index"><span itemprop="name">每天一道算法题</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/2020/06/20/%E6%AF%8F%E5%A4%A9%E4%B8%80%E9%81%93%E7%AE%97%E6%B3%95%E9%A2%98/0031%E6%A0%91%E8%8A%82%E7%82%B9%E7%9A%84%E7%AC%ACk%E4%B8%AA%E7%A5%96%E5%85%88/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/06/20/每天一道算法题/0031树节点的第k个祖先/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>2.1k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>2 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <font size=8>树节点的第k个祖先</font>
+
+<blockquote>
+<p>编号：0031</p>
+<p>试题来源：<a href="https://leetcode-cn.com/problems/kth-ancestor-of-a-tree-node/" target="_blank" rel="noopener">leetcode</a></p>
+<p>my blog:<a href="https://leadingwerido.com" target="_blank" rel="noopener">Something</a></p>
+</blockquote>
+<h1 id="试题描述"><a href="#试题描述" class="headerlink" title="试题描述"></a>试题描述</h1><p>给定一棵树，树上有<code>n</code>个节点，按照从<code>0</code>到<code>n-1</code>进行编号。树以父节点数组的形式给出，其中<code>parent[i]</code>是节点<code>i</code>的父节点。树的根节点是编号为0的节点。其中<code>parent[0]=-1</code>表示其没有父节点。</p>
+<p>请设计并实现<code>getKthAncestor(int node, int k)</code>函数，返回值为节点<code>node</code>的第<code>k</code>个祖先节点。若不存在，则返回<code>-1</code>。</p>
+<p>树节点的第<code>k</code>个祖先节点是从该节点到根节点路径上的第<code>k</code>个节点。</p>
+<blockquote>
+<p>限制：</p>
+<ul>
+<li>$1\leq k\leq n\leq 5*10^4$</li>
+<li>parent[0]==-1表示编号为0的节点是根节点</li>
+<li>对于所有的$0&lt;i&lt;n$，$0\leq parent[i] &lt;n$总成立</li>
+<li>$0\leq node&lt;n$</li>
+<li>至多查询$5*10^4$次</li>
+</ul>
+</blockquote>
+<h1 id="解答算法"><a href="#解答算法" class="headerlink" title="解答算法"></a>解答算法</h1><h2 id="暴力法"><a href="#暴力法" class="headerlink" title="暴力法"></a>暴力法</h2><h3 id="算法思路"><a href="#算法思路" class="headerlink" title="算法思路"></a>算法思路</h3><p>很显然，最简单的方法就是进行递归调用<code>getKthAncestor</code>函数，我们要查找<code>node</code>的第k个父节点，也就是找<code>node</code>的父节点的第<code>k-1</code>个父节点，也就是调用<code>getKthAncestor(parent[node],k-1)</code>。</p>
+<p>递归调用的终止条件要么是<code>k==0</code>，说明当前节点就是返回值，要么是<code>parent[node]==-1</code>,说明查询不到满足条件的，返回<code>-1</code>。</p>
+<h3 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">TreeAncestor</span> &#123;</span></span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">	<span class="keyword">int</span> size;</span><br><span class="line">	<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; parent;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    TreeAncestor(<span class="keyword">int</span> n, <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; parent) &#123;</span><br><span class="line">    	size = n;</span><br><span class="line">    	<span class="keyword">this</span>-&gt;parent = parent;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">getKthAncestor</span><span class="params">(<span class="keyword">int</span> node, <span class="keyword">int</span> k)</span> </span>&#123;  <span class="comment">//递归调用</span></span><br><span class="line">    	<span class="keyword">if</span>(k == <span class="number">0</span>)</span><br><span class="line">    	&#123;</span><br><span class="line">    		<span class="keyword">return</span> node;</span><br><span class="line">    	&#125;</span><br><span class="line">    	<span class="keyword">if</span>(node == <span class="number">0</span>)</span><br><span class="line">    	&#123;</span><br><span class="line">    		<span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">    	&#125;</span><br><span class="line">    	<span class="keyword">return</span> getKthAncestor(parent[node], k - <span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h3 id="复杂度分析"><a href="#复杂度分析" class="headerlink" title="复杂度分析"></a>复杂度分析</h3><blockquote>
+<ul>
+<li>时间复杂度：最坏情况下，要遍历整个深度，因此时间复杂度为$O(n)$</li>
+<li>空间复杂度：递归调用要使用栈空间，栈空间占用也为$O(n)$</li>
+</ul>
+</blockquote>
+<h2 id="二分查找"><a href="#二分查找" class="headerlink" title="二分查找"></a>二分查找</h2><h3 id="算法思路-1"><a href="#算法思路-1" class="headerlink" title="算法思路"></a>算法思路</h3><p>利用动态规划的思路，建立一个辅助的二维数组<code>dp</code>，其中<code>dp[0][i]</code>存放的是节点<code>i</code>的第$2^0$个父节点，也即<code>parent[i]</code>。</p>
+<p>显然<code>dp[i][j]</code>的定义为节点<code>j</code>的第$2^i$个父节点，因此显然递推公式有</p>
+<script type="math/tex; mode=display">
+dp[i][j] = dp[i-1][dp[i-1][j]]</script><p>然后就可以利用这个对我们要查找的第<code>k</code>个祖先节点进行拆分，将其划分成二进制数，然后依次进行寻找，例如我们要找寻第3个父节点，也就是使用<code>dp[dp[i][1]][0]</code>。</p>
+<h3 id="代码实现-1"><a href="#代码实现-1" class="headerlink" title="代码实现"></a>代码实现</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">TreeAncestor</span> &#123;</span></span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">	<span class="keyword">int</span> n;</span><br><span class="line">	<span class="keyword">int</span> size;</span><br><span class="line">	<span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt; dp;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    TreeAncestor(<span class="keyword">int</span> n, <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; parent) &#123;</span><br><span class="line">    	<span class="keyword">int</span> flag = <span class="number">1</span>;</span><br><span class="line">    	<span class="keyword">this</span>-&gt;n = n;</span><br><span class="line">    	<span class="keyword">int</span> i = <span class="number">0</span>;</span><br><span class="line">    	dp.push_back(parent);</span><br><span class="line">    	<span class="keyword">while</span>(flag)</span><br><span class="line">    	&#123;</span><br><span class="line">    		flag = <span class="number">0</span>;</span><br><span class="line">    		<span class="function"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; <span class="title">tmp</span><span class="params">(n)</span></span>;</span><br><span class="line">    		<span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; n; ++j)</span><br><span class="line">    		&#123;</span><br><span class="line">    			<span class="keyword">if</span>(dp[i][j] != <span class="number">-1</span>)</span><br><span class="line">    			&#123;</span><br><span class="line">    				tmp[j] = dp[i][dp[i][j]];</span><br><span class="line">    			&#125;</span><br><span class="line">    			<span class="keyword">else</span></span><br><span class="line">    			&#123;</span><br><span class="line">    				tmp[j] = <span class="number">-1</span>;</span><br><span class="line">    			&#125;</span><br><span class="line">    			<span class="keyword">if</span>(tmp[j] != <span class="number">-1</span>)</span><br><span class="line">    			&#123;</span><br><span class="line">    				flag = <span class="number">1</span>;</span><br><span class="line">    			&#125;</span><br><span class="line">    		&#125;</span><br><span class="line">    		dp.push_back(tmp);</span><br><span class="line">    		++i;</span><br><span class="line">    	&#125;</span><br><span class="line">    	size = dp.size();</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">getKthAncestor</span><span class="params">(<span class="keyword">int</span> node, <span class="keyword">int</span> k)</span> </span>&#123;</span><br><span class="line">    	<span class="keyword">int</span> i = size;</span><br><span class="line">    	<span class="keyword">int</span> result = node;</span><br><span class="line">    	<span class="keyword">while</span>(k)</span><br><span class="line">    	&#123;</span><br><span class="line">    		<span class="keyword">if</span>(k == <span class="number">0</span>)</span><br><span class="line">    		&#123;</span><br><span class="line">    			<span class="keyword">return</span> result;</span><br><span class="line">    		&#125;</span><br><span class="line">    		<span class="keyword">if</span>(k &gt;= <span class="built_in">pow</span>(<span class="number">2</span>,i - <span class="number">1</span>))</span><br><span class="line">    		&#123;</span><br><span class="line">    			result = dp[i - <span class="number">1</span>][result];</span><br><span class="line">    			k -= <span class="built_in">pow</span>(<span class="number">2</span>,i - <span class="number">1</span>);</span><br><span class="line">    		&#125;</span><br><span class="line">    		<span class="keyword">if</span>(result == <span class="number">-1</span>)</span><br><span class="line">    		&#123;</span><br><span class="line">    			<span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">    		&#125;</span><br><span class="line">    		--i;</span><br><span class="line">    	&#125;</span><br><span class="line">    	<span class="keyword">return</span> result;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h3 id="复杂度分析-1"><a href="#复杂度分析-1" class="headerlink" title="复杂度分析"></a>复杂度分析</h3><blockquote>
+<ul>
+<li>时间复杂度：因为用到了二分查找，所以只用进行$log(n)$次搜索</li>
+<li>空间复杂度：整个过程用了一个dp数组进行存放，空间复杂度$nlog(n)$</li>
+</ul>
+</blockquote>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/06/20/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/03%E7%B3%BB%E7%BB%9F%E6%80%BB%E7%BA%BF/%E6%80%BB%E7%BA%BF%E7%BB%93%E6%9E%84/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Leading Werido">
+      <meta itemprop="description" content="笔记记录">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Something">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/06/20/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/03%E7%B3%BB%E7%BB%9F%E6%80%BB%E7%BA%BF/%E6%80%BB%E7%BA%BF%E7%BB%93%E6%9E%84/" class="post-title-link" itemprop="url">计算机组成原理/03系统总线/总线结构</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-06-20 14:58:33 / 修改时间：15:24:32" itemprop="dateCreated datePublished" datetime="2020-06-20T14:58:33+08:00">2020-06-20</time>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/2020/06/20/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/03%E7%B3%BB%E7%BB%9F%E6%80%BB%E7%BA%BF/%E6%80%BB%E7%BA%BF%E7%BB%93%E6%9E%84/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/06/20/计算机组成原理/03系统总线/总线结构/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>578</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <font size=8>总线结构</font>
+
+<blockquote>
+<p>my blog:<a href="https://leadingwerido.com" target="_blank" rel="noopener">Something</a></p>
+</blockquote>
+<p>总线结构通常分为单总线和多总线结构两种</p>
+<h1 id="单总线结构"><a href="#单总线结构" class="headerlink" title="单总线结构"></a>单总线结构</h1><p><img src="https://i.loli.net/2020/06/19/zamNAeC6Fb7sOcZ.jpg" alt="单总线结构.jpg"></p>
+<p>将CPU、主存、I/O设备都挂在系统总线上，允许它们之间<strong>直接交换信息</strong></p>
+<ul>
+<li><p>优点：结构简单，便于扩充</p>
+</li>
+<li><p>缺点：所有的信息传送都经过一条总线，形成计算机系统的瓶颈，影响效率</p>
+</li>
+<li>主要应用范围：小型计算机或微型计算机</li>
+</ul>
+<p>当数据传输需求量和传输速度要求不太高的情况下，为克服<strong>总线瓶颈</strong>的问题，尽可能采用<strong>增加总线宽度和提高传输速率</strong>来解决。</p>
+<h1 id="多总线结构"><a href="#多总线结构" class="headerlink" title="多总线结构"></a>多总线结构</h1><h2 id="双总线结构"><a href="#双总线结构" class="headerlink" title="双总线结构"></a>双总线结构</h2><p><img src="https://i.loli.net/2020/06/20/rRiwoZPBkqHdAj5.jpg" alt="双总线结构.jpg"></p>
+<p>特点：将速度较低的I/O设备从单总线上分离，形成<strong>主存总线和I/O总线分开的结构</strong></p>
+<p><strong>通道</strong>：是具有特殊功能的<strong>处理器</strong>，具有CPU的一部分功能，对I/O设备可以同一管理，<strong>增大了系统的吞吐能力</strong></p>
+<h2 id="三总线结构"><a href="#三总线结构" class="headerlink" title="三总线结构"></a>三总线结构</h2><p>特点：将速率不同的I/O设备进行分类，连接在不同的通道上，<strong>提高计算机系统的工作效率</strong></p>
+<p>==任一时刻只能使用一种总线==</p>
+<ul>
+<li><p>形式1</p>
+<p><img src="https://i.loli.net/2020/06/20/BaKMrg7jkSU4OsW.jpg" alt="三总线结构1.jpg"></p>
+<p>主存总线：连接CPU与主存</p>
+<p>I/O总线：连接CPU和各类I/O设备</p>
+<p>DMA总线：用于<strong>高速</strong>I/O设备与主存交换信息</p>
+<p>主存总线和DMA总线不能同时对主存操作</p>
+</li>
+<li><p>形式2</p>
+<p><img src="https://i.loli.net/2020/06/20/TWFZG9Hla2VnPkd.jpg" alt="三总线结构2.jpg"></p>
+<p>局部总线：连接处理器和Cache</p>
+<p>而且Cache不仅和局部总线相连，也和系统总线相连</p>
+<p>拓展总线：通过拓展总线接口和系统总线相连，提高效率。</p>
+</li>
+</ul>
+<h2 id="四总线结构"><a href="#四总线结构" class="headerlink" title="四总线结构"></a>四总线结构</h2><p><img src="https://i.loli.net/2020/06/20/wd6F19rZIxcukJA.jpg" alt="四总线结构.jpg"></p>
+<p>特点：增加了和计算机系统相连紧密的高速总线，挂载了高速I/O设备</p>
+<blockquote>
+<p> 对高速设备来说，自身工作很少依赖CPU，同时又更贴近CPU，会提高工作效率 </p>
+</blockquote>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/06/19/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/03%E7%B3%BB%E7%BB%9F%E6%80%BB%E7%BA%BF/%E6%80%BB%E7%BA%BF%E7%89%B9%E6%80%A7%E5%8F%8A%E6%80%A7%E8%83%BD%E6%8C%87%E6%A0%87/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1462,206 +1724,6 @@ T_M=\sum\limits_{i=1}^{n}f_it_i</script></li>
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/06/10/Linux%E6%91%B8%E7%B4%A2/g++%E7%9A%84%E7%AE%80%E5%8D%95%E4%BD%BF%E7%94%A8/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Leading Werido">
-      <meta itemprop="description" content="笔记记录">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Something">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/06/10/Linux%E6%91%B8%E7%B4%A2/g++%E7%9A%84%E7%AE%80%E5%8D%95%E4%BD%BF%E7%94%A8/" class="post-title-link" itemprop="url">Linux摸索/g++的简单使用</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-06-10 01:03:14" itemprop="dateCreated datePublished" datetime="2020-06-10T01:03:14+08:00">2020-06-10</time>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus：</span>
-    
-    <a title="disqus" href="/2020/06/10/Linux%E6%91%B8%E7%B4%A2/g++%E7%9A%84%E7%AE%80%E5%8D%95%E4%BD%BF%E7%94%A8/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/06/10/Linux摸索/g++的简单使用/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>0</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/06/09/%E6%AF%8F%E5%A4%A9%E4%B8%80%E9%81%93%E7%AE%97%E6%B3%95%E9%A2%98/0027%E6%8A%8A%E6%95%B0%E5%AD%97%E7%BF%BB%E8%AF%91%E6%88%90%E5%AD%97%E7%AC%A6%E4%B8%B2/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Leading Werido">
-      <meta itemprop="description" content="笔记记录">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Something">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/06/09/%E6%AF%8F%E5%A4%A9%E4%B8%80%E9%81%93%E7%AE%97%E6%B3%95%E9%A2%98/0027%E6%8A%8A%E6%95%B0%E5%AD%97%E7%BF%BB%E8%AF%91%E6%88%90%E5%AD%97%E7%AC%A6%E4%B8%B2/" class="post-title-link" itemprop="url">0027 把数字翻译成字符串</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2020-06-09 22:00:00 / 修改时间：22:00:23" itemprop="dateCreated datePublished" datetime="2020-06-09T22:00:00+08:00">2020-06-09</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%AF%8F%E5%A4%A9%E4%B8%80%E9%81%93%E7%AE%97%E6%B3%95%E9%A2%98/" itemprop="url" rel="index"><span itemprop="name">每天一道算法题</span></a>
-                </span>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus：</span>
-    
-    <a title="disqus" href="/2020/06/09/%E6%AF%8F%E5%A4%A9%E4%B8%80%E9%81%93%E7%AE%97%E6%B3%95%E9%A2%98/0027%E6%8A%8A%E6%95%B0%E5%AD%97%E7%BF%BB%E8%AF%91%E6%88%90%E5%AD%97%E7%AC%A6%E4%B8%B2/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/06/09/每天一道算法题/0027把数字翻译成字符串/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>948</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <font size=8>把数字翻译成字符串</font>
-
-<blockquote>
-<p>编号：0027</p>
-<p>试题来源：[leetcode]</p>
-</blockquote>
-<h1 id="试题描述"><a href="#试题描述" class="headerlink" title="试题描述"></a>试题描述</h1><p>给定一个数字，按照如下规则将其翻译为字符串：0翻译成<code>a</code>，1翻译成<code>b</code>，$\cdots$，25翻译成<code>z</code>。一个数字可能有多种翻译，例如<code>25</code>既有可能分开翻译成<code>cf</code>，也有可能翻译成<code>z</code>。请输出给定数字有多少种不同的翻译方法。</p>
-<blockquote>
-<p>说明</p>
-<ul>
-<li>$0\leq num\leq 2^{31}$</li>
-</ul>
-</blockquote>
-<h1 id="解答算法"><a href="#解答算法" class="headerlink" title="解答算法"></a>解答算法</h1><h2 id="算法思路"><a href="#算法思路" class="headerlink" title="算法思路"></a>算法思路</h2><p>很显然这道题目应该是用动态规划的方法来看。我们假设<code>dp[i]</code>代表的是前$i$位数字的可能翻译种类，注意假设<code>dp[0]=1</code>为了方便讨论，实际使用是从<code>dp[1]</code>开始的。</p>
-<p>那么显然对于任意的<code>dp[i]</code>，假如将第<code>i</code>位数字单独进行翻译，那么显然<code>dp[i]=dp[i-1]</code>；加入将其与前一位数字合并进行讨论，那么就要求<code>i-1   i</code>两个组合起来的二位数小于等于25，同时这里还有一个坑<code>01</code>认为只能翻译成<code>ab</code>，因此两个组合起来的二位数还应该大于等于10，满足这样的条件，<code>dp[i]</code>的数目还应当加上<code>dp[i-2]</code>。</p>
-<h2 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">translateNum</span><span class="params">(<span class="keyword">int</span> num)</span> </span>&#123;</span><br><span class="line">    	<span class="built_in">string</span> Num = to_string(num);    <span class="comment">//这里为了方便取位，将数字变成了字符串</span></span><br><span class="line">    	<span class="keyword">int</span> size = Num.size();</span><br><span class="line">    	<span class="keyword">int</span> tmp;</span><br><span class="line">    	<span class="built_in">stringstream</span> ss;      <span class="comment">//用字符串流方便取得两位数字合成的二位数</span></span><br><span class="line">    	<span class="function"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; <span class="title">dp</span><span class="params">(size + <span class="number">1</span>, <span class="number">0</span>)</span></span>;   <span class="comment">//动态规划的dp数组</span></span><br><span class="line">    	dp[<span class="number">0</span>] = <span class="number">1</span>;   <span class="comment">//设初始值</span></span><br><span class="line">    	dp[<span class="number">1</span>] = <span class="number">1</span>;</span><br><span class="line">    	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">2</span>; i &lt;= size; ++i)</span><br><span class="line">    	&#123;</span><br><span class="line">    		dp[i] += dp[i - <span class="number">1</span>];    <span class="comment">//肯定可以成立</span></span><br><span class="line">    		ss.clear();</span><br><span class="line">    		ss &lt;&lt; Num.substr(i - <span class="number">2</span>, <span class="number">2</span>);</span><br><span class="line">    		ss &gt;&gt; tmp;</span><br><span class="line">    		<span class="keyword">if</span>(tmp &gt;= <span class="number">10</span> &amp;&amp; tmp &lt;= <span class="number">25</span>)   <span class="comment">//判断tmp是否满足条件</span></span><br><span class="line">    			dp[i] += dp[i<span class="number">-2</span>];</span><br><span class="line">    	&#125;</span><br><span class="line">    	<span class="keyword">return</span> dp[size];   <span class="comment">//返回结果</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<h2 id="复杂度分析"><a href="#复杂度分析" class="headerlink" title="复杂度分析"></a>复杂度分析</h2><blockquote>
-<p>时间复杂度为：$O(n)$，整个过程只对数字的位数进行了一次遍历</p>
-<p>空间复杂度为：$O(n)$，使用了dp数组</p>
-</blockquote>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1731,7 +1793,7 @@ T_M=\sum\limits_{i=1}^{n}f_it_i</script></li>
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">36</span>
+          <span class="site-state-item-count">38</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
